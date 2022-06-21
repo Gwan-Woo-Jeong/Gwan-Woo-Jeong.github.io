@@ -1,7 +1,6 @@
 .header {
   background: $header-background;
   a {
-    text-transform: uppercase;
     font-weight: map-get($base, font-weight);
     text-decoration: none !important;
     @include link-colors($header-text-color, $main-color-1);
