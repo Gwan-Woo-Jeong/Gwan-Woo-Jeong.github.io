@@ -15,7 +15,7 @@
 
 .header--dark {
   @extend .text--dark;
-  background: rgba(#000, 0.15);
+  background: rgba(#000, .15);
   .navigation__item--active {
     &::after {
       @include split-line(bottom, 4px, $text-color-theme-dark);
@@ -25,7 +25,7 @@
 
 .header--light {
   @extend .text--light;
-  background: rgba(#fff, 0.15);
+  background: rgba(#fff, .15);
   .navigation__item--active {
     &::after {
       @include split-line(bottom, 4px, $text-color-theme-light);
@@ -83,7 +83,7 @@
 }
 
 .navigation {
-  @include overflow(auto, 'x');
+  @include overflow(auto, "x");
   & > ul {
     height: map-get($layout, header-height);
     padding-bottom: 0;
@@ -109,7 +109,7 @@
   &::after {
     display: block;
     margin-bottom: -4px;
-    content: '';
+    content: "";
     @include split-line(bottom, 4px, transparent);
   }
 }
