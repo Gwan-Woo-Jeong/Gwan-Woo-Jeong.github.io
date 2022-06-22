@@ -1,9 +1,67 @@
 header:
   - title: Home
-    url: /index.html
+    url: /
 
   - title: Archive
     url: /archive.html
 
   - title: About
     url: /about.html
+
+main:
+  - title: 👨🏻‍💻 Keep On Developing
+    children:
+      - title: 전체보기
+        url: /
+  - title: Daily
+    children:
+      - title: Today I Learned
+        url: /TIL
+      - title: 에러노트
+        url: /error-note
+      - title: Retro
+        url: /retro
+  - title: Project
+    children:
+      - title: Project
+        url: /project
+      - title: Toy Project
+        url: /toy-project
+  - title: Language
+    children:
+      - title: Javascript
+        url: /javascript
+      - title: Python
+        url: /python
+  - title: Web
+    children:
+      - title: HTML/CSS
+        url: /HTML&CSS
+      - title: Node.js
+        url: /node-js
+      - title: React
+        url: /react
+      - title: ETC
+        url: /web-etc
+  - title: Foundation
+    children:
+      - title: CS
+        url: /cs
+      - title: 자료구조
+        url: /data-structure
+      - title: 알고리즘
+        url: /algorithm
+      - title: ETC
+        url: /base-etc
+  - title: Network
+    children:
+      - title: HTTP
+        url: /http
+  - title: Database
+    children:
+      - title: MySQL
+        url: /mySQL
+  - title: Book
+    children:
+      - title: Review
+        url: /review
