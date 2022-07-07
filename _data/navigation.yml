@@ -1,37 +1,35 @@
 # main links
-main:
-  - title: 'Category'
-    url: /categories/
-  - title: 'Tag'
-    url: /tags/
-  - title: 'Search'
-    url: /search/
 
-docs:
-  - title: 'Title 1'
-    children:
-      - title: 'Cateogory'
-        url: /categories/
-      - title: 'Tag'
-        url: /tags/
-  - title: 'Title 2'
-    children:
-      - title: 'Cateogory'
-        url: /categories/
-      - title: 'Tag'
-        url: /tags/
-  - title: 'Title 3'
-    children:
-      - title: 'Cateogory'
-        url: /categories/
-      - title: 'Tag'
-        url: /tags/
-
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+# main:
+#   - title: 'Daily'
+#     children:
+#       - title: 'Today I Learned'
+#         url: /categories/TIL
+#       - title: '에러노트'
+#         url: /categories/error-note
+#       - title: 'Book Review'
+#         url: /categories/book-review
+#   - title: 'Project'
+#     children:
+#       - title: 'Project'
+#         url: /categories/project
+#       - title: 'Toy Project'
+#         url: /categories/toy-project
+#   - title: 'Web'
+#     children:
+#       - title: 'HTML/CSS'
+#         url: /categories/html-css
+#       - title: 'React'
+#         url: /categories/react
+#       - title: 'Network'
+#         url: /categories/network
+#       - title: 'etc'
+#         url: /categories/web-etc
+#   - title: 'Base'
+#     children:
+#       - title: '자료구조'
+#         url: /categories/data-structure
+#       - title: '알고리즘'
+#         url: /categories/algorithm
+#       - title: 'ETC'
+#         url: /categories/base-etc
