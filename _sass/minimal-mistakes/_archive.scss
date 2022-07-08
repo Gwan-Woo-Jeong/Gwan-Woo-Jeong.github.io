@@ -196,9 +196,18 @@
     }
   }
 
+  // 날짜
   .page__meta {
     margin: 0 0 4px;
-    font-size: 0.6em;
+    font-size: $type-size-7;
+
+    @include breakpoint($medium) {
+      font-size: $type-size-8;
+    }
+
+    @include breakpoint($small) {
+      font-size: $type-size-9;
+    }
   }
 
   .page__meta-sep {
@@ -209,17 +218,36 @@
     }
   }
 
+  // 제목
   .archive__item-title {
     margin-top: 0.5em;
-    font-size: $type-size-5;
-  }
+    font-size: $type-size-4;
 
-  .archive__item-excerpt {
-    display: none;
+    a {
+      text-decoration: none;
+    }
 
     @include breakpoint($medium) {
-      display: block;
+      margin-top: 0.4em;
+      font-size: $type-size-5;
+    }
+
+    @include breakpoint($small) {
+      margin-top: 0.3em;
       font-size: $type-size-6;
+    }
+  }
+
+  // 설명
+  .archive__item-excerpt {
+    font-size: $type-size-6;
+
+    @include breakpoint($medium) {
+      font-size: $type-size-7;
+    }
+
+    @include breakpoint($small) {
+      font-size: $type-size-8;
     }
   }
 
