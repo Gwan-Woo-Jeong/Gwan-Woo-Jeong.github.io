@@ -4,6 +4,7 @@ title: '프로젝트 회고 : MAPLY'
 categories: project
 tag: [project, backend]
 toc: true
+toc_sticky: true
 excerpt: '나만의 유튜브 플레이리스트를 만들 수 있는 간단한 웹사이트다. 사실 유튜브에서도 이미 제공하고 있는 기능이지만...'
 header:
   teaser: images/2021-08-19-MAPLY_retro/MAPLY-logo.png

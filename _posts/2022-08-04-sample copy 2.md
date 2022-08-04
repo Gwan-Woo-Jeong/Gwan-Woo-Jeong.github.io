@@ -1,12 +1,12 @@
 ---
 layout: single
-title: '첫번째 샘플 포스트'
+title: '2022.08.04 TIL'
 categories: TIL
 tag: [sample, blog, jekyll]
 toc: true
 excerpt: 'Change log of enhancements and bug fixes made to the theme.'
 header:
-  teaser: images/unsplash-gallery-image-2-th.jpg
+  teaser: images/thumbnails/til_01.png
 ---
 
 # Welcome
