@@ -18,6 +18,13 @@
   }
 }
 
+.archive-item > div {
+  margin-bottom: 14px;
+  @include breakpoint($small) {
+    margin-bottom: 2px;
+  }
+}
+
 .archive__item {
   position: relative;
 
