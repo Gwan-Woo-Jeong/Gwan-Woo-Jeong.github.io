@@ -1,0 +1,18 @@
+.page__taxonomy {
+  margin-top: 5px;
+  display: block;
+
+  @include breakpoint($small) {
+    margin-left: 8px;
+    display: inline;
+  }
+}
+
+.page__taxonomy-item-tag {
+  display: inside;
+  margin-right: 5px;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  border: 1px solid #b6b6b6;
+  border-radius: 4px;
+}

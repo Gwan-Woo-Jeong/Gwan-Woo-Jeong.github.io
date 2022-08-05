@@ -261,14 +261,22 @@
   }
 
   .archive__item-teaser {
-    height: 240px;
+    height: 50vw;
 
     @include breakpoint($small) {
-      height: 200px;
+      height: 30vw;
     }
 
     @include breakpoint($medium) {
-      height: 120px;
+      height: 15vw;
+    }
+
+    @include breakpoint($large) {
+      height: 11vw;
+    }
+
+    @include breakpoint($x-large) {
+      height: 136px;
     }
   }
 }
