@@ -289,3 +289,4 @@ defaults:
 date_format: '%Y-%m-%d'
 after_footer_scripts:
   - /assets/js/custom/dark-theme.js
+  - /assets/js/custom/to-top.js

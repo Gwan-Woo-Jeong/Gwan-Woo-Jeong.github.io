@@ -16,3 +16,20 @@
   border: 1px solid #b6b6b6;
   border-radius: 4px;
 }
+
+#toTop {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  background-color: $primary-color;
+  color: $background-color;
+  opacity: 35%;
+  border-radius: 50%;
+  right: 5.5%;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
