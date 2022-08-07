@@ -248,7 +248,7 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: $primary-color;
+        background: $highlight-color;
         width: 100%;
         -webkit-transition: $global-transition;
         transition: $global-transition;
@@ -486,10 +486,15 @@
 
 .nav__title {
   margin: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.75rem 0.85em 0em;
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
   font-weight: bold;
+  opacity: 0.9;
+
+  i {
+    margin-right: 6px;
+  }
 }
 
 .nav__sub-title {
@@ -508,25 +513,34 @@
 
 .toc {
   font-family: $sans-serif-narrow;
-  color: $gray;
+  color: $text-color;
   background-color: $background-color;
-  border: 1px solid $border-color;
   border-radius: $border-radius;
-  -webkit-box-shadow: $box-shadow;
-  box-shadow: $box-shadow;
 
   .nav__title {
-    color: $background-color;
-    font-size: $type-size-6;
-    background: $primary-color;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
+    font-size: 0.8em;
   }
 
   // Scrollspy marks toc items as .active when they are in focus
   .active a {
-    @include yiq-contrasted($active-color);
+    color: $highlight-color;
+    font-weight: 700;
+    // @include yiq-contrasted($active-color);
   }
+}
+
+.toc__wrap {
+  position: relative;
+  padding-left: 10px;
+}
+
+.toc__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4px;
+  border-left: 1.5px solid $border-color;
+  margin: $type-size-7 0;
 }
 
 .toc__menu {
@@ -546,7 +560,6 @@
     color: $muted-text-color;
     font-weight: bold;
     line-height: 1.5;
-    border-bottom: 1px solid $border-color;
 
     &:hover {
       color: $text-color;
