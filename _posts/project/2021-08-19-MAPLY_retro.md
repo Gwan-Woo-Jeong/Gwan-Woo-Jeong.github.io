@@ -2,7 +2,7 @@
 layout: single
 title: '프로젝트 회고 : MAPLY'
 categories: project
-tag: [project, backend]
+tag: [project, backend, NodeJS]
 toc: true
 toc_sticky: true
 excerpt: '
@@ -14,7 +14,7 @@ Why?
 이전 프로젝트에서는 프론트엔드로만 참여했었는데, 이번 프로젝트는 백엔드 포지션을 담당했다. 백엔드에 대한 지식이 부족한 상태에서, 프론트엔드로 프로젝트를 진행해보니까 아쉬운 점이 많았다. 그중 가장 큰 부분은 백엔드와의 소통이 어려웠던 것이다. 아직 경험이 부족하여 협업이 익숙하지 않은 부분도 있지만, 내가 그쪽 분야를 잘 모르기 때문에 생기는 문제가 더 큰 것 같았다.
 '
 header:
-  teaser: images/2021-08-19-MAPLY_retro/MAPLY-logo.png
+  teaser: ../../images/2021-08-19-MAPLY_retro/MAPLY-logo.png
 ---
 
 <img src="../../images/2021-08-19-MAPLY_retro/MAPLY-logo.png" alt="MAPLY-logo" style="zoom:50%;" />
