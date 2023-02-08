@@ -1,22 +1,27 @@
 ---
 layout: single
-title: '프로젝트 회고 : review auto-installer'
+title: '프로젝트 회고 : Review Auto-Installer'
 categories: project
 tag: [project, nodeJS]
 toc: true
 toc_sticky: true
 excerpt: '
-Project : Review auto-installer
+Project : Review Auto-Installer
 
 Intro
 
 현재 근무하고 있는 회사의 자체서비스 중, 쇼핑몰 리뷰관리 솔루션이 있다. 여러 쇼핑몰에서 판매하고 있는 특정 상품에 대한 리뷰를 통합 관리해주어 구매 전환율을 높여주는 서비스다. 메뉴얼을 보고 고객이 직접 설치하기도 하지만, 대부분 회사 측으로 설치 요청을 하여 내가 직접 설치할 경우가 많다.
 '
 header:
-  teaser: 
+  teaser: ../../images/2023-02-07-REVIEW_AUTOINSTALLER/review-install.gif
 ---
 
-# Project : Review auto-installer
+# Project : Review Auto-Installer
+
+![리뷰 자동설치 썸네일](../../images/2023-02-07-REVIEW_AUTOINSTALLER/review-install.gif)
+
+> Github 레포 🏠
+> [https://github.com/Gwan-Woo-Jeong/coco-review-autoinstaller](https://github.com/Gwan-Woo-Jeong/coco-review-autoinstaller)
 
 ## Intro
 
@@ -45,13 +50,13 @@ header:
 ### Dependencies
 
 - JSDOM
-  - 자바스크립트로 HTML 코드를 조작하기 위한 라이브러리. 이번 프로젝트에 가장 핵심적인 역할을 했다.
+  : 자바스크립트로 HTML 코드를 조작하기 위한 라이브러리. 이번 프로젝트에 가장 핵심적인 역할을 했다.
 - prompts
-  - 프로그램 사용을 더 간편하게 하도록 인터페이스를 제공해준다.
+  : 프로그램 사용을 더 간편하게 하도록 인터페이스를 제공해준다.
 - js-beautify
-  - 더러운 HTML 아웃풋 코드를 예쁘게 다듬어 준다.
+  : 더러운 HTML 아웃풋 코드를 예쁘게 다듬어 준다.
 - ~~dotenv~~
-  - 환경변수를 사용하려고 추가했는데, 생각해보니 환경변수가 없어도 되어서 삭제하였다.
+  : 환경변수를 사용하려고 추가했는데, 생각해보니 환경변수가 없어도 되어서 삭제하였다.
 
 ### Structure
 
@@ -104,3 +109,13 @@ header:
 
 1. package.json 파일의 최상위에 `type` 항목을 “module”로 설정한다.
 2. `import` 시에 `.js` 확장자를 명시해준다.
+
+## Final App View
+
+### Package Install
+
+![리뷰 자동설치 post-install](../../images/2023-02-07-REVIEW_AUTOINSTALLER/postinstall.gif)
+
+### Auto-install
+
+![리뷰 자동설치](../../images/2023-02-07-REVIEW_AUTOINSTALLER/review-install.gif)
