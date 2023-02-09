@@ -94,6 +94,9 @@
         .toc__menu {
           overflow-y: auto;
           max-height: calc(100vh - 7em);
+          li {
+            font-size: 1em;
+          }
         }
       }
     }
@@ -217,7 +220,7 @@
 
     &:before {
       @supports (pointer-events: none) {
-        content: '';
+        content: "";
         position: fixed;
         top: 0;
         left: 0;
@@ -268,7 +271,7 @@
 
   &:before {
     display: block;
-    content: '';
+    content: "";
     position: absolute;
     top: -11px;
     left: calc(50% - 10px);
@@ -285,7 +288,7 @@
 
   &:after {
     display: block;
-    content: '';
+    content: "";
     position: absolute;
     top: -10px;
     left: calc(50% - 10px);

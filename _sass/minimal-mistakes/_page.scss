@@ -64,6 +64,10 @@ body {
       margin-right: 0;
       width: 100%;
       clear: both;
+
+      li {
+        font-size: 0.89em;
+      }
     }
   }
 }
@@ -150,11 +154,12 @@ body {
     font-size: 0.8em;
     background: $code-background-color;
     border-radius: $border-radius;
+    color: $danger-color;
 
     &::before,
     &::after {
       letter-spacing: -0.2em;
-      content: '\00a0'; /* non-breaking space*/
+      content: "\00a0"; /* non-breaking space*/
     }
   }
 
@@ -324,7 +329,7 @@ body {
 }
 
 .page__meta-sep::before {
-  content: '\2022';
+  content: "\2022";
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
