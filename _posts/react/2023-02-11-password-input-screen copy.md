@@ -2,7 +2,7 @@
 layout: single
 title: '[React Native] 비밀번호 입력 스크린 만들기'
 categories: react
-tag: [react, frontend, toy]
+tag: [react native, frontend, tutorial]
 toc: true
 toc_sticky: true
 excerpt: '
