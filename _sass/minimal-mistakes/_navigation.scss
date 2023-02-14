@@ -588,3 +588,11 @@
     padding-left: 3.25rem;
   }
 }
+
+.fa-moon::before {
+  color: $highlight-color;
+}
+
+.fa-sun::before {
+  color: $highlight-color;
+}
