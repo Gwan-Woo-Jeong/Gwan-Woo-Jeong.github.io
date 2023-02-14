@@ -1,6 +1,6 @@
 ---
 layout: single
-title: '[React Native] Swipeable로 밀어서 삭제 구현'
+title: '[React Native] Swipeable로 밀어서 삭제 구현해보기'
 categories: react
 tag: [react native, frontend, tutorial]
 toc: true
@@ -21,7 +21,7 @@ header:
 
 ![swipe-delete.gif](../../images/2023-02-13-react-native-swipe-delete/swipe-delete.gif)
 
-# react-native-gesture-handler/Swipeable로 밀어서 삭제 구현해보기
+# react-native-gesture-handler/Swipeable로 밀어서 삭제 구현
 
 이번 포스트에서는 react-native-getsture-handler에서 제공하는 Swipeable 컴포넌트를 사용하여, FlatList의 Item을 삭제를 구현한 경험을 공유해보고자 한다.
 
