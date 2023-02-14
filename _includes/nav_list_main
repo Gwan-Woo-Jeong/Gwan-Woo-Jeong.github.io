@@ -99,7 +99,7 @@
       <ul>
         {% for category in site.categories %} {% if category[0] == "algorithm" %}
         <li>
-          <a href="/categories/algorithm" class="">알고리즘 ({{ category[1].size }})</a>
+          <a href="/categories/algorithm" class="">Algorithm ({{ category[1].size }})</a>
         </li>
         {% endif %} {% endfor %}
       </ul>
