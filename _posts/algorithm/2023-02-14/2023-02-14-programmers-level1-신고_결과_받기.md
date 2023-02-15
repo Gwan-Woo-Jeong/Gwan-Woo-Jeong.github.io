@@ -2,7 +2,7 @@
 layout: single
 title: '[Algorithm] Programmers - Level 1 : 신고결과 받기'
 categories: algorithm
-tag: [javascript, Web API]
+tag: [javascript, algorithm, programmers]
 toc: true
 toc_sticky: true
 excerpt: '
