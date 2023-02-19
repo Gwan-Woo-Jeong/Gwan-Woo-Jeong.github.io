@@ -30,7 +30,11 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: mix($background-color, $muted-text-color, 50%); /* color of the scroll thumb */
+  background-color: mix(
+    $background-color,
+    $muted-text-color,
+    50%
+  ); /* color of the scroll thumb */
   border-right: 6px solid $background-color; /* creates padding around scroll thumb */
   border-top: 10px solid $background-color;
   border-bottom: 10px solid $background-color;
@@ -137,7 +141,7 @@ blockquote {
     font-style: italic;
 
     &:before {
-      content: '\2014';
+      content: "\2014";
       padding-right: 5px;
     }
   }
@@ -269,8 +273,9 @@ figure {
 figcaption {
   margin-bottom: 0.5em;
   color: $muted-text-color;
-  font-family: $caption-font-family;
-  font-size: $type-size-6;
+  font-family: $global-font-family;
+  font-size: $type-size-7;
+  text-align: center;
 
   a {
     -webkit-transition: $global-transition;
@@ -353,7 +358,7 @@ a,
 tr,
 td,
 form button,
-input[type='submit'],
+input[type="submit"],
 .btn,
 .highlight,
 .archive__item-teaser {
