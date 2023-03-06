@@ -20,9 +20,11 @@ excerpt: '
    >
 '
 header:
-  teaser: 
+  teaser:  ../../images/2023-02-27-browser-rendering/how-browser-rendering-works.png
 
 ---
+
+![how-browser-rendering-works.png](../../images/2023-02-27-browser-rendering/how-browser-rendering-works.png)
 
 이번 포스팅에서는 우리가 브라우저를 켰을 때, 화면에 웹 페이지가 그려지기 까지 과정을 살펴보고자 한다. 본문으로 들어가기 전에, 결론부터 간략히 요약하자면 브라우저는 다음과 같은 과정을 통해 웹 페이지를 보여준다.
 
@@ -46,7 +48,9 @@ header:
 
 먼저 브라우저 렌더링에 필요한 리소스(HTML, CSS, 자바스크립트, 이미지, 폰트 등의 정적 파일 또는 서버가 동적으로 생성한 데이터)를 서버로부터 가져오기 위해 서버에 요청한다. 브라우저에는 서버에 요청을 전송하기 위해 주소창이 있다. 주소창에 URL을 입력한 후 엔터를 누르면, URL의 호스트 이름이 DNS를 통해 IP 주소로 변환되고 이 주소를 가지고 있는 서버에게 요청을 보내게 된다.
 
-![url-structure-and-scheme.png](../../images/2023-02-27-browser-rendering/url-structure-and-scheme.png)
+<a href="../../images/2023-02-27-browser-rendering/url-structure-and-scheme.png">
+  <img src="../../images/2023-02-27-browser-rendering/url-structure-and-scheme.png" title="url-structure-and-scheme.png">
+</a>
 
 예를 들어, `https://google.com`을 주소창에 입력한 후 엔터를 누르면, 루트 요청이 google.com 서버로 전송된다.
 
@@ -58,7 +62,9 @@ header:
 
 실제로 이 과정을 브라우저 내에서 확인해보자. 요청과 응답은 개발자 도구의 network 탭에서 확인할 수 있다.
 
-![browser-rendering-network-tab.png](../../images/2023-02-27-browser-rendering/browser-rendering-network-tab.png)
+<a href="../../images/2023-02-27-browser-rendering/browser-rendering-network-tab.png">
+  <img src="../../images/2023-02-27-browser-rendering/browser-rendering-network-tab.png" title="browser-rendering-network-tab.png">
+</a>
 
 위 화면은 처음 구글에 접속했을 때, 개발자 도구에서 network 탭의 모습이다. 그런데, 분명 `https://google.com/(index.html)`로 요청했지만 index.html과 함께 요청하지 않은 이미지와 json 등 다른 리소스까지 같이 응답을 받았다.
 
@@ -70,7 +76,9 @@ header:
 
 아래 그림은 브라우저 렌더링 엔진이 HTML 파싱부터 DOM을 생성하는 과정을 보여준다. 이 순서들을 더 자세히 알아보자.
 
-![dom-process.png](../../images/2023-02-27-browser-rendering/dom-process.png)
+<a href="../../images/2023-02-27-browser-rendering/dom-process.png">
+  <img src="../../images/2023-02-27-browser-rendering/dom-process.png" title="dom-process.png">
+</a>
 
 **1. 바이트(Bytes)** : 서버가 브라우저 요청에 대해 바이트 (2진수) 형태로 된 HTML 문서를 응답한다.
 
@@ -96,17 +104,23 @@ header:
 
 **CSSOM이 DOM과 다른 점**은 CSS는 부모 요소의 속성이 자식 요소에게 상속된다는 점이다 . 예를들어, `ul` 태그와 `li` 태그가 각각 `부모 - 자식`의 관계를 갖으면 `ul` 태그의 CSS 속성이 `li` 태그에게도 적용된다. 아래 그림을 보면, `ul` 태그에 선언된 `font-size: 16px` 과 `list-style-type: none` 속성이 `li` 태그에게도 전달된 것을 볼 수 있다.
 
-![CSSOM.png](../../images/2023-02-27-browser-rendering/CSSOM.png)
+<a href="../../images/2023-02-27-browser-rendering/CSSOM.png">
+  <img src="../../images/2023-02-27-browser-rendering/CSSOM.png" title="CSSOM.png">
+</a>
 
 ## 렌더 트리 생성
 
 **DOM**과 **CSSOM**은 브라우저가 웹페이지의 구조와 스타일을 이해하고 또 조작하기 위해서 만든 객체 트리 형태의 자료구조다. 브라우저가 웹페이지를 화면에 렌더링, 즉 그리기 위해선 이 두 개의 트리를 결합하여 **렌더 트리 (render tree)**를 생성해야한다.
 
-![render-tree.png](../../images/2023-02-27-browser-rendering/render-tree.png)
+<a href="../../images/2023-02-27-browser-rendering/render-tree.png">
+  <img src="../../images/2023-02-27-browser-rendering/render-tree.png" title="render-tree.png">
+</a>
 
 말그대로 렌더링을 위한 트리이기 때문에, `meta` 태그나 `script` 태그 혹은 `display : none` CSS 속성으로 인해 화면에 그려지지 않는 노드들을 포함하지 않는다. 브라우저는 렌더 트리를 기반으로 HTML 요소의 위치와 크기를 계산하며 **페인팅 (painting)** 과정에서 픽셀을 렌더링한다.
 
-![rendering-path.png](../../images/2023-02-27-browser-rendering/rendering-path.png)
+<a href="../../images/2023-02-27-browser-rendering/rendering-path.png">
+  <img src="../../images/2023-02-27-browser-rendering/rendering-path.png" title="rendering-path.png">
+</a>
 
 특정 상황에서 위 렌더링 과정은 반복해서 실행될 수 있다. 다음과 같은 경우, 브라우저는 레이아웃 계산과 페인팅을 다시 실행한다.
 
@@ -118,7 +132,9 @@ header:
 
 ## 자바스크립트 파싱
 
-![js-parsing-to-execution.png](../../images/2023-02-27-browser-rendering/js-parsing-to-execution.png)
+<a href="../../images/2023-02-27-browser-rendering/js-parsing-to-execution.png">
+  <img src="../../images/2023-02-27-browser-rendering/js-parsing-to-execution.png" title="js-parsing-to-execution.png">
+</a>
 
 렌더링 엔진은 HTML 파일을 파싱하며, DOM을 생성하는 동안 `<script>` 태그를 만나면 파싱을 일시 중지한다. 그리고 나서 해당 파일을 서버에서 다운로드하고, 자바스크립트 코드를 파싱한다. 이 과정에서 브라우저 렌더링 엔진은 자바스크립트 엔진에 제어권을 넘겨 파싱을 담당한다. 이후에는 브라우저 렌더링 엔진이 다시 제어권을 받아 HTML 파싱을 재개한다.
 
@@ -160,10 +176,12 @@ DOM 조작으로 요소가 변경되면, 브라우저는 DOM 트리를 재구성
 
 레이아웃과 페인팅은 별개의 작업이므로, 각각이 발생할 수도 있고, 둘 다 발생할 수도 있다. 크기나 위치와 같은 속성이 변경되면 레이아웃 작업만 다시 수행하면 되고, 스타일과 같은 속성이 변경되면 페인팅 작업만 다시 수행하면 된다.
 
-![reflow-vs-repaint.png](../../images/2023-02-27-browser-rendering/reflow-vs-repaint.png)
+<a href="../../images/2023-02-27-browser-rendering/reflow-vs-repaint.png">
+  <img src="../../images/2023-02-27-browser-rendering/reflow-vs-repaint.png" title="reflow-vs-repaint.png">
+</a>
 
 # Reference
 
-- 모던 자바스크립트 Deep Dive
+- [모던 자바스크립트 Deep Dive](https://search.shopping.naver.com/book/catalog/32472713016?cat_id=50010881&frm=PBOKMOD&query=%EB%AA%A8%EB%8D%98+%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8+Deep+Dive&NaPm=ct%3Dlewoj0b4%7Cci%3Dd2a24ad9b36f508759ca65a0c282a7e5f1461421%7Ctr%3Dboknx%7Csn%3D95694%7Chk%3D42d650ee1d5bfeacedf99c58eb22deee8c43ac7c)
 - [https://web.dev/critical-rendering-path-constructing-the-object-model/](https://web.dev/critical-rendering-path-constructing-the-object-model/)
 - [https://joooing.tistory.com/entry/rendering](https://joooing.tistory.com/entry/rendering)
