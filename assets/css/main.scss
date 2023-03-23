@@ -5,7 +5,8 @@ search: false
 
 @charset "utf-8";
 
-@import 'minimal-mistakes/skins/default'; // skin
-@import 'minimal-mistakes'; // main partials
+@import "minimal-mistakes/skins/default"; // skin
+@import "minimal-mistakes"; // main partials
 
-@import 'custom/custom.scss';
+@import "custom/custom.scss";
+@import "custom/custom-syntax-light.scss";
