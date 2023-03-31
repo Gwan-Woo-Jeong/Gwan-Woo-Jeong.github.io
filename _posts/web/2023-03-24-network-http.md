@@ -9,20 +9,13 @@ excerpt: '
 HTTP란?
 
 HTTP는 하이퍼텍스트 전송 프로토콜(HyperText Transfer Protocol)의 약어로, 인터넷에서 데이터를 주고받을 수 있는 프로토콜이다. 웹 페이지를 방문할 때마다 사용자의 컴퓨터는 HTTP를 통해 인터넷 어딘가에 있는 다른 컴퓨터에서 해당 페이지를 다운로드한다.
-
-프로토콜은 상호 간에 정의한 규칙을 의미하며, 특정 기기 간에 데이터를 주고받기 위해 정의된다. 통신 프로토콜은 각각의 기기가 데이터를 주고받을 때의 규칙을 명시하여, 데이터 전송 과정을 원활하게 만든다.
-
-컴퓨터 네트워크에서 데이터를 보내고 받는 성격에 따라, 다양한 프로토콜이 만들어졌다. 예를 들어, 웹 문서를 주고받을 때는 HTTP를 사용하고, 파일을 주고받을 때는 FTP를, 메일은 SMTP, POP 등의 프로토콜을 사용한다.
-
-웹에서는 브라우저와 서버 간에 데이터를 주고받기 위한 방식으로 HTTP 프로토콜을 사용하고 있다. HTTP 프로토콜은 일반적으로 TCP/IP 통신 위에서 동작하며, 기본 포트는 80번이다.
-   >
 '
 header:
-  teaser:  ../../images/2023-03-24-network-http/http-thumb.png
+  teaser:  https://images.velog.io/images/cjy0029/post/b8d977b1-a707-4a3b-b11a-33928cc92213/http.png
 
 ---
 
-![http-thumb.png](../../images/2023-03-24-network-http/http-thumb.png)
+![http-thumb.png](https://images.velog.io/images/cjy0029/post/b8d977b1-a707-4a3b-b11a-33928cc92213/http.png)
 
 <br />
 
@@ -143,7 +136,7 @@ HTTP 메시지에 추가 정보를 포함시키는 부분이다. 크게 세 가�
 - **`Accept`**: 클라이언트가 처리 가능한 미디어 타입 종류를 나열
 - **`If-Modified-Since`**: 여기에 쓰여진 시간 이후로 변경된 리소스를 취득한다. 페이지가 수정되었으면 최신 페이지로 교체한다.
 - **`Authorization`**: 인증 토큰을 서버로 보낼 때 쓰이는 헤더
-- **`Origin`**: 서버로 POST 요청을 보낼 때 요청이 어느 주소에서 시작되었는지 나타내는 값이다. 이 값으로 요청을 보낸 주소와 받는 주소가 다르면 **CORS(Cross-Origin Resource Sharing) 에러**가 발생한다.
+- **`Origin`**: 서버로 POST 요청을 보낼 때 요청이 어느 주소에서 시작되었는지 나타내는 값이다. 이 값으로 요청을 보낸 주소와 받는 주소가 다르면 <a href="../../web-network/network-cors">**CORS(Cross-Origin Resource Sharing) 에러**</a>가 발생한다.
 - **`Cookie`**: 쿠키 값이 key-value 형태로 표현된다.
 
 <h3>Body</h3>
@@ -258,7 +251,7 @@ URL은 웹을 뒷받치는 **주소체계**다.
 기타 요청 메서드는 다음과 같다.
 
 - HEAD : 서버 헤더 정보를 획득. GET과 비슷하나 Response Body를 반환하지 않음
-- OPTIONS : 서버 옵션들을 확인하기 위한 요청. [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)에서 사용
+- OPTIONS : 서버 옵션들을 확인하기 위한 요청. [CORS](../../web-network/network-cors)에서 사용
 
 <br />
 
