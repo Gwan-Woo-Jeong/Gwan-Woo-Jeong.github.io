@@ -1,6 +1,6 @@
 ---
 layout: single
-title: '[Javascript] 실행 컨텍스트란?'
+title: '[JavaScript] 실행 컨텍스트란?'
 categories: javascript
 tag: [javascript, ES6, execution context]
 toc: true

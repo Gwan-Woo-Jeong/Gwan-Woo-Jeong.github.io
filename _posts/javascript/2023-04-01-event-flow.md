@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "[Web] 이벤트 플로우 (버블링, 캡처링)"
-categories: web-etc
-tag: [Web, Browser, Event Flow, Event Capturing, Event Bubbling]
+title: "[JavaScript] 이벤트 플로우 (버블링, 캡처링)"
+categories: javascript
+tag: [Browser, Event Flow, Event Capturing, Event Bubbling]
 toc: true
 toc_sticky: true
 excerpt: '
@@ -38,13 +38,16 @@ HTML 요소들은 태그 안에 태그가 위치하는 식으로 계층적으로
 
 그런데 만약 부모 요소인 body와 html에 바인딩된 이벤트가 있다면, 이벤트 플로우에 의해 해당 이벤트도 실행되게 된다.
 
+<figure>
 <a href="../../images/2023-04-01-event-flow/event-flow-start.png">
   <img src="../../images/2023-04-01-event-flow/event-flow-start.png" title="event-flow-start.png">
+<figcaption>
+사용자가 직접적으로 발생시킨 이벤트가 바인딩된 요소는 이벤트의 시발점이 되고,<br/> 이로 인해 중첩된 요소들은 이벤트 탑승을 하게 된다.
+</figcaption>
 </a>
+</figure>
 
-사용자가 직접적으로 발생시킨 이벤트가 바인딩된 요소는 이벤트의 시발점이 되고, 이로 인해 중첩된 요소들은 이벤트 탑승을 하게 된다.
-
-<br />
+<br/>
 
 # target / currentTarget
 
@@ -81,9 +84,15 @@ body.addEventListener("click", (e) => {
 });
 ```
 
+<figure>
 <a href="../../images/2023-04-01-event-flow/event-target.png">
   <img src="../../images/2023-04-01-event-flow/event-target.png" title="event-target.png">
+  <figcaption>
+  target : 이벤트의 시발점이자 이벤트 플로우를 일으킨 요소 <br/>
+  currentTarget : 이벤트 플로우로 인해 이벤트 탑승을 한 요소<br/>
+  </figcaption>
 </a>
+</figure>
 
 <br />
 
@@ -145,9 +154,14 @@ addEventListener(type, listener, useCapture);
 
 이벤트 객체의 `stopPropagation` 메서드는 말그대로 전파(propagation)를 막는다(stop). 이를 호출하면 버블링 / 캡처링 설정에 따라 상위 / 하위 요소로의 이벤트 전파를 중단시킨다.
 
+<figure>
 <a href="../../images/2023-04-01-event-flow/event-stoppropagation.png">
   <img src="../../images/2023-04-01-event-flow/event-stoppropagation.png" title="event-stoppropagation.png">
+  <figcaption>
+  div의 이벤트 핸들러에 stopPropagtion 메서드를 사용하여 이벤트 버블링을 막은 모습
+  </figcaption>
 </a>
+</figure>
 
 ### event.stopImmediatePropagation
 

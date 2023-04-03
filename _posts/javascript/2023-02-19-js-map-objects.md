@@ -1,6 +1,6 @@
 ---
 layout: single
-title: '[Javascript] Map 객체에 대해서 알아보자'
+title: '[JavaScript] Map 객체에 대해서 알아보자'
 categories: javascript
 tag: [javascript, ES6, Map]
 toc: true
