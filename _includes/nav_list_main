@@ -69,7 +69,7 @@
       </ul>
       <span class="nav__sub-title">Web</span>
       <ul>
-        {% for category in site.categories %} {% if category[0] == "HTML-CSS" %}
+        {% for category in site.categories %} {% if category[0] == "html-css" %}
         <li>
           <a href="/categories/html-css" class=""
             >HTML/CSS ({{ category[1].size }})</a
