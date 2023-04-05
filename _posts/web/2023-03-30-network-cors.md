@@ -13,10 +13,12 @@ excerpt: '
 예전에는 클라이언트가 동일한 서버에서만 리소스를 받았기 때문에, 리소스의 위험성에 대한 의심의 여지가 없었다. 웹 생태계가 다양화되면서 서로 다른 도메인 간에 데이터를 주고 받을 일이 많아졌다.
 '
 header:
-  teaser: https://blog.4d.com/wp-content/uploads/2020/05/cors-1-1024x512.jpg
+  teaser: https://i.redd.it/sv2wevo3mri81.jpg
 ---
 
-![cors-thumb.png](https://blog.4d.com/wp-content/uploads/2020/05/cors-1-1024x512.jpg)
+<a style="text-align: center; width: 100%;" href="https://i.redd.it/sv2wevo3mri81.jpg">
+  <img style="width: 50%;" src="https://i.redd.it/sv2wevo3mri81.jpg" title="cors-thumb.jpg">
+</a>
 
 <br />
 
