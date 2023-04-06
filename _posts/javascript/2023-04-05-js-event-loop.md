@@ -100,7 +100,7 @@ header:
 
 1. 콜 스택이 비었는지 확인한다.
 2. 콜 스택이 비면 우선 마이크로태스크 큐에서 가장 오래된 태스크를 콜 스택에 올린다.<br/>
-   이것을 마이크로태스크 큐가 빌 때까지 수행한다.
+   이것을 마이크로태스크 큐가 빌 때까지 수행한다. 
 3. 마이크로태스크가 모두 수행된 후, 렌더링이 필요할 시 렌더링 작업을 실행한다.
 4. 다음 매크로태스크 큐를 확인한다.
 5. 매크로태스크 큐에서 가장 오래된 태스크 하나를 콜 스택에 올린다.
@@ -142,6 +142,16 @@ console.log("script end");
     width: 100%;
     height: 100%;" src="https://docs.google.com/presentation/d/e/2PACX-1vShF8tD77zHxzfCYCWDXPbj0P6oAf17t-TqqQJljf74yiRpxVyUNs1K7Tr9w3MFQGsJ37hu0EAwHjRL/embed?start=false&loop=true&delayms=60000" frameborder="0" width="749" height="630" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </div>
+<br />
+
+# 정리
+
+자바스크립트는 하나의 작업 환경(싱글 스레드 = 하나의 콜 스택)을 가지고 있기 때문에 한 번에 한 가지 작업(함수)만 실행할 수 있다. 그런데, 코드가 작동하는 환경(브라우저, Node.js)에서는 여러 작업이 동시에 실행된다. 그 원리는 다음과 같다.
+
+1. 자바스크립트 엔진은 특정 작업(Web API)을 브라우저에게 전달하고 둘은 각자의 작업을 동시에 수행한다. 브라우저는 해당 작업을 마친 후, 후속 작업(콜백 함수)를 우선 순위에 따라 다른 보관소(매크로 / 마이크로태스크 큐)에 저장한다.
+2. 이벤트 루프는 콜 스택이 빌 때 마다, 마이크로태스크 큐에 있는 각 작업들을 큐가 빌 때 까지 콜 스택에 쌓는다. 그 다음, 매크로태스크 큐의 태스크 하나를 콜 스택에 쌓는다. 이 과정을 계속 반복한다.
+3. 자바스크립트 엔진은 이렇게 콜 스택에 쌓인 작업들을 위에서부터 하나씩 처리한다.   
+
 <br />
 
 # Reference
