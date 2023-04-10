@@ -116,7 +116,7 @@
       </ul>
       <span class="nav__sub-title">Base</span>
       <ul>
-        {% for category in site.categories %} {% if category[0] == "CS" %}
+        {% for category in site.categories %} {% if category[0] == "cs" %}
         <li>
           <a href="/categories/CS" class="">CS ({{ category[1].size }})</a>
         </li>
