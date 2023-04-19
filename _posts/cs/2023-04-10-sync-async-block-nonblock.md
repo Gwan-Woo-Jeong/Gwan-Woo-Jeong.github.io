@@ -43,8 +43,8 @@ header:
 함수들은 다음과 같이 서로 (제어권과) 결과값을 주고 받으며 실행된다.
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/control-result.gif">
-  <img style="width: 75%;" src="../../images/sync-async-block-nonblock/control-result.gif" title="control-result.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/control-result.gif">
+  <img style="width: 75%;" src="../../images/2023-04-10-sync-async-block-nonblock/control-result.gif" title="control-result.gif">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -64,8 +64,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 이 과정을 그림과 함께 순서대로 살펴보자.
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/blocking.gif">
-  <img style="width: 50%;" src="../../images/sync-async-block-nonblock/blocking.gif" title="blocking.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/blocking.gif">
+  <img style="width: 50%;" src="../../images/2023-04-10-sync-async-block-nonblock/blocking.gif" title="blocking.gif">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -82,8 +82,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 이 과정을 그림과 함께 순서대로 살펴보자.
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/non-blocking.gif">
-  <img style="width: 50%;" src="../../images/sync-async-block-nonblock/non-blocking.gif" title="non-blocking.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/non-blocking.gif">
+  <img style="width: 50%;" src="../../images/2023-04-10-sync-async-block-nonblock/non-blocking.gif" title="non-blocking.gif">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -109,8 +109,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 2. 작업 시간이 겹치지 않게 차례대로 실행하기
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/sync.jpeg">
-  <img style="width: 75%;" src="../../images/sync-async-block-nonblock/sync.jpeg" title="sync.jpeg">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/sync.jpeg">
+  <img style="width: 75%;" src="../../images/2023-04-10-sync-async-block-nonblock/sync.jpeg" title="sync.jpeg">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -120,8 +120,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 여기서, 호출자가 호출한 함수의 결과값(함수의 완료)을 기다린다는 뜻은 **결과값이 있어야 다음 작업을 수행할 수 있다**는 뜻을 의미한다.
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/sync-check.gif">
-  <img style="width: 75%;" src="../../images/sync-async-block-nonblock/sync-check.gif" title="sync-check.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/sync-check.gif">
+  <img style="width: 75%;" src="../../images/2023-04-10-sync-async-block-nonblock/sync-check.gif" title="sync-check.gif">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -133,8 +133,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 여기서, 호출자가 호출한 함수의 결과값(함수의 완료)을 기다리지 않는다는 뜻은 당장 **결과값이 없어도 다음 작업을 수행할 수 있다**는 것을 의미한다.
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/async.jpeg">
-  <img style="width: 50%;" src="../../images/sync-async-block-nonblock/async.jpeg" title="async.jpeg">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/async.jpeg">
+  <img style="width: 50%;" src="../../images/2023-04-10-sync-async-block-nonblock/async.jpeg" title="async.jpeg">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -179,8 +179,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 > = 호출자는 호출한 함수의 결과값을 받을 때 까지, 아무것도 못하고 대기
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/sync-blocking.gif">
-  <img style="width: 75%;" src="../../images/sync-async-block-nonblock/sync-blocking.gif" title="sync-blocking.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/sync-blocking.gif">
+  <img style="width: 75%;" src="../../images/2023-04-10-sync-async-block-nonblock/sync-blocking.gif" title="sync-blocking.gif">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -208,8 +208,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 > = 호출자는 호출한 함수의 결과값을 받기 전까지 가능한 작업을 실행
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/sync-nonblocking.gif">
-  <img style="width: 75%;" src="../../images/sync-async-block-nonblock/sync-nonblocking.gif" title="sync-nonblocking.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/sync-nonblocking.gif">
+  <img style="width: 75%;" src="../../images/2023-04-10-sync-async-block-nonblock/sync-nonblocking.gif" title="sync-nonblocking.gif">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -238,8 +238,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 > 이와 상관없이 자신의 작업을 실행
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/async-nonblocking.gif">
-  <img style="width: 75%;" src="../../images/sync-async-block-nonblock/async-nonblocking.gif" title="async-nonblocking.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/async-nonblocking.gif">
+  <img style="width: 75%;" src="../../images/2023-04-10-sync-async-block-nonblock/async-nonblocking.gif" title="async-nonblocking.gif">
   <figcaption></figcaption>
 </a>
 </figure>
@@ -269,8 +269,8 @@ B 함수가 완료돼서야, 제어권이 B 함수에서 A 함수로 넘어온�
 > 받을 때까지 아무것도 하지 않고 대기
 
 <figure>
-<a style="text-align: center; width: 100%;" href="../../images/sync-async-block-nonblock/async-blocking.gif">
-  <img style="width: 75%;" src="../../images/sync-async-block-nonblock/async-blocking.gif" title="async-blocking.gif">
+<a style="text-align: center; width: 100%;" href="../../images/2023-04-10-sync-async-block-nonblock/async-blocking.gif">
+  <img style="width: 75%;" src="../../images/2023-04-10-sync-async-block-nonblock/async-blocking.gif" title="async-blocking.gif">
   <figcaption>A 함수는 B 함수의 작업이 당장 필요 없음에도 불구하고,<br/>자신의 작업을 멈춰 B 함수가 끝날 때 까지 기다리고 있는 모습이다.<br/>이런 경우는 거의 마주할 일이 없어서 넘어가도 무방하다.</figcaption>
 </a>
 </figure>
