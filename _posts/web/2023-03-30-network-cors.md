@@ -20,8 +20,6 @@ header:
   <img style="width: 50%;" src="https://i.redd.it/sv2wevo3mri81.jpg" title="cors-thumb.jpg">
 </a>
 
-<br />
-
 # 들어가기전
 
 ## 등장 배경
@@ -48,8 +46,6 @@ header:
 
 내 브라우저는 사이트 A에 로그인을 하여 토큰을 가지고 있다. 그리고 한 해커가 사이트 A를 사칭하여 메일을 보내 사이트 B의 페이지의 링크를 보냈고 나는 그 링크를 클릭했다. 이 페이지를 방문하면 사이트 A의 페이지 콘텐츠와 인증 정보를 반환하는 요청을 하게되고 해커는 내 사이트 A 계정으로 사이트 A를 접속할 수 있게 된다.
 
-<br />
-
 # CORS
 
 CORS는 HTTP 헤더에 CORS 관련 항목을 추가하여, 웹 어플리케이션이 출처가 다른 리소스에 접근이 가능하도록 브라우저에게 알려주는 체제이다.
@@ -66,8 +62,6 @@ CORS에서 가장 헷갈리는 부분들을 먼저 짚고 넘어가자.
 </a>
 </figure>
 
-<br />
-
 # 출처란?
 
 브라우저는 다음 3가지를 기준으로 출처가 같은지 아니면 다른지 판단한다.
@@ -76,13 +70,11 @@ CORS에서 가장 헷갈리는 부분들을 먼저 짚고 넘어가자.
   <img src="../../images/2023-03-30-network-cors/url-cors-origin.png" title="url-cors-origin.png">
 </a>
 
-&emsp; **1. 프로토콜** <br/>
-&emsp; **2. 호스트** <br/>
-&emsp; **3. 포트 (보통 생략, 명시될 경우 일치해야 함)** <br/>
+&emsp; **1. 프로토콜** <br />
+&emsp; **2. 호스트** <br />
+&emsp; **3. 포트 (보통 생략, 명시될 경우 일치해야 함)** <br />
 
 이 3가지가 모두 같으면 동일 출처(Same-Origin) 요청이고, 하나라도 다르면 교차 출처(Cross-origin) 요청이다. 교차 출처 요청을 할 경우, CORS 정책을 준수해야 정상적으로 응답을 받을 수 있다.
-
-<br />
 
 # CORS의 동작
 
@@ -91,8 +83,6 @@ CORS는 기본적으로 다음과 같은 과정으로 동작한다.
 1. 클라이언트가 HTTP 헤더에 `Origin` 필드의 값으로 출처(현재 접속한 사이트)를 담아 요청을 보낸다.
 2. 서버가 헤더에 `Access-Control-Allow-Origin` 필드의 값으로 허용된 출처 (신뢰할 수 있는 사이트나 API 주소 목록)를 담아 응답을 보낸다.
 3. 클라이언트의 브라우저는 `Origin` 값과 `Access-Control-Allow-Origin` 값을 비교해 유효한 응답인지 확인한다. 유효하지 않으면 응답을 사용하지 않는다.
-
-<br />
 
 # CORS 요청 방식 3가지
 
@@ -113,8 +103,6 @@ CORS는 기본적으로 다음과 같은 과정으로 동작한다.
   <img src="../../images/2023-03-30-network-cors/simple-request.png" title="simple-request.png">
 </a>
 
-<br />
-
 ## Preflight Request
 
 본 요청을 보내기 전에 Preflight Request(예비 요청)을 먼저 보낸다. 본 요청이 서버 데이터에 영향을 줄 수 있기 때문에, 먼저 안전한지 확인하는 것이다. 예비 요청에서 허락이 떨어지면, 본 요청이 가능하다.
@@ -128,8 +116,6 @@ CORS는 기본적으로 다음과 같은 과정으로 동작한다.
 </a>
 
 > 매 요청마다 예비 요청을 보내는 것은 비효율적이다. 한 가지 옵션으로 백엔드는 예비 요청에 대한 응답에 `Access-Control-Max-Age` (CORS가 캐싱되는 시간)를 포함하여 프론트에게 준다. 그러면, 해당 시간만큼 프론트는 예비 요청을 프리 패스할 수 있다.
-
-<br />
 
 ## Credentialed Request
 
@@ -148,21 +134,15 @@ CORS는 기본적으로 다음과 같은 과정으로 동작한다.
 1. `Access-Control-Allow-Origin`의 값이 와일드 카드 (\* : 모두 허용)이 아닌 출처 주소를 정확하게 명시해야 한다.
 2. 응답 헤더에 반드시 `Access-Control-Allow-Credentials : true`가 있어야 한다.
 
-<br />
-
 # CORS 해결 방법
 
 CORS 정책을 위반한 경우, 보통 `Access-Control-Allow-Origin` 의 값을 올바르게 주면 해결된다. 와일드 카드(\*)를 값으로 지정해주면, 모든 출처를 허용하기 때문에 약간 위험할 수 있다. 따라서 정확한 출처 주소를 명시해주는 것이 더 안전하게 해결하는 방법이다.
-
-<br />
 
 # 요약
 
 1. CORS는 교차 출처 리소스를 허용해주는 체제고 SOP(브라우저 기본 값)는 이를 차단하는 체제다.
 2. CORS 요청 방식은 Simple Request, Preflight Request, Crendential Request가 있다. 열거 순으로 요청 조건이 더 까다롭지만 그만큼 더 안전하다.
 3. 보통 `Access-Control-Allow-Origin` 필드의 값을 올바르게 주면 CORS 에러를 해결할 수 있다.
-
-<br />
 
 # Reference
 

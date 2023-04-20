@@ -18,13 +18,9 @@ header:
 
 ![js-execution-context-thumb.png](../../images/2023-03-20-js-execution-context/execution-context-thumb.png)
 
-<br />
-
 # 실행 컨텍스트
 
 자바스크립트의 **실행 컨텍스트(Execution Context)**는 코드가 실행되는 환경을 의미하는데, 실행 컨텍스트를 번역하면 "코드의 문맥"으로 즉, 코드가 실행되는 환경이라고 볼 수 있다. 실행 컨텍스트는 코드가 실행되는 환경에서 필요한 모든 정보들을 모아둔 객체다. 이러한 정보를 저장해 둠으로써, 코드가 여러 번 실행되더라도 동일한 환경을 구성할 수 있게 된다.
-
-<br />
 
 # 생성 시점
 
@@ -61,8 +57,6 @@ foo();
 4. 스택 최상단의 `bar` 함수의 실행이 종료되면, `bar` 함수에 의해 만들어진 실행 컨텍스트는 콜 스택에서 제거된다.
 5. `foo` 함수가 실행을 종료하면 `foo` 함수에 의해 만들어진 실행 컨텍스트는 콜 스택에서 제거된다.
 
-<br />
-
 # 종류
 
 실행 컨텍스트는 다음 3가지 종류의 코드에 대해 실행 컨텍스트를 생성한다.
@@ -78,8 +72,6 @@ foo();
 3. **eval() 실행 컨텍스트 ( Eval Function Execution Context )**
 
    이제 거의 쓰지 않는 `eval()` 함수에 의해 생성되는 실행 컨텍스트이다.
-
-<br />
 
 # 구조
 
@@ -127,8 +119,6 @@ VariableEnvironment에 저장된 정보는 아래 LexicalEnvironment와 동일�
 
 `this`로 지정된 객체를 저장하며, `this`가 따로 지정되지 않은 경우에는 전역객체를 저장한다.
 
-<br />
-
 # 정리
 
 1. 자바스크립트 엔진은 코드 실행 또는 함수 호출 시 해당 컨텍스트와 관련된 정보를 수집한다. 이 정보는 실행 컨텍스트 객체에 저장된다.
@@ -136,8 +126,6 @@ VariableEnvironment에 저장된 정보는 아래 LexicalEnvironment와 동일�
 3. EnvironmentRecord에는 매개변수명, 함수선언, 변수명 등 현재 컨텍스트와 관련된 코드 식별자 정보가 저장된다.
 4. OuterEnvironmentReference에는 상위 스코프에서 자신이 선언되었던 당시의 LexicalEnvionment가 저장된다. 이를 통해 스코프 체이닝이 가능해지며, 식별자를 상위 스코프로 거슬러 올라가면서 찾을 수 있다.
 5. ThisBinding은 `this`로 지정된 객체를 저장하며, `this`가 따로 지정되지 않은 경우에는 전역객체가 저장된다.
-
-<br />
 
 # Reference
 

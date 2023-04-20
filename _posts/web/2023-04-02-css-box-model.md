@@ -16,13 +16,9 @@ header:
 
 ![box-model-thumb](https://web-dev.imgix.net/image/VbAJIREinuYvovrBzzvEyZOpw5w1/FBaaJXdnuSkvOx1nB0CB.jpg?auto=format&w=1600)
 
-<br />
-
 # 박스 모델
 
 웹 페이지의 모든 요소는 박스 형태의 영역을 가지고 있다. 브라우저는 이 박스 모델의 크기와 속성 그리고 위치를 계산하여 웹 페이지를 화면에 띄운다.
-
-<br />
 
 # 구성
 
@@ -82,8 +78,6 @@ div {
 }
 ```
 
-<br />
-
 # box-sizing
 
 기본적으로, 박스 모델에서 padding과 border는 content에 포함되지 않는다. 이 계산 방식을 `content-box`라고 한다. 이 방식은 요소가 화면에 보여지는 실제 크기를 계산하는데 큰 혼란을 가져온다.
@@ -101,15 +95,15 @@ div {
 
 언뜻 보기에 이 요소는 너비는 `200px`인 것 같다. 하지만, 이 요소가 보여지는 실제 너비는 `225px`이다. 왜냐하면 padding과 border는 `width`에 포함되지 않기 때문이다. 실제 너비를 구하기 위해선 이 둘을 더해주어야한다.
 
-> content-box로 구한 div의 실제 너비 : <br/>
+> content-box로 구한 div의 실제 너비 : <br />
 > width + padding + border
-> <br/>(200px + 20px + 5px = 225px)
+> <br />(200px + 20px + 5px = 225px)
 
 그러나, 매번 padding과 border를 더하여 실제 크기를 계산하는 것은 번거롭다. 이를 해결하기 위해, `box-sizing` 속성의 값을 `border-box` 로 줄 수 있다.
 
 `border-box`는 padding과 border를 포함하여 content를 계산하는 방식이다. 따라서, 실제 너비는 `width`의 값으로 `content-box` 방식보다 훨씬 직관적이다.
 
-> border-box로 구한 div의 실제 너비 : <br/>width (200px)
+> border-box로 구한 div의 실제 너비 : <br />width (200px)
 
 <h3>box-sizing 정리</h3>
 
@@ -140,8 +134,6 @@ div {
   </tbody>
 </table>
 </div>
-
-<br />
 
 # Reference
 

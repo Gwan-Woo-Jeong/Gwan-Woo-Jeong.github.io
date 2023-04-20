@@ -20,8 +20,6 @@ header:
   <img style="width: 75%;" src="https://cdn.dribbble.com/users/86357/screenshots/1796751/dominodribbble_alt.gif" title="iteration-thumb.png">
 </div>
 
-<br />
-
 # 이터러블 / 이터레이터
 
 이터레이션 프로토콜은 자료를 순회하기 위한 프로토콜(약속된 규칙)이다. 이터레이션 프로토콜을 따르는 객체는 `for .. of` 문으로 순회 가능하다.
@@ -41,7 +39,7 @@ header:
 
 이터러블 프로토콜을 준수한 객체를 이터러블이라고 한다. 이터러블은 `Symbol.iterator` 메서드를 포함한다. 배열과 문자열 같은 이터러블은 `Symbol.iterator` 를 프로토타입 체인으로 상속받아 순회 가능하다.
 
-> iterate : (계산·컴퓨터 처리 절차를) 반복하다 <br/>
+> iterate : (계산·컴퓨터 처리 절차를) 반복하다 <br />
 > iterate + able = **iterable = 반복 가능한 (객체)**
 
 ## 이터레이터
@@ -118,8 +116,6 @@ for (let item of arr) {
   console.log(item); // "mapped zero", "mapped one"
 }
 ```
-
-<br/>
 
 # 제너레이터
 
@@ -254,8 +250,6 @@ async function getUserAll() {
 getUserAll();
 ```
 
-<br/>
-
 # 정리
 
 - 이터러블 프로토콜을 준수한 객체는 `Symbol.iterator` 메서드를 포함한다. 이 프로토콜을 준수한 객체가 이터러블이며, `for .. of` 문으로 순회가 가능하다.
@@ -264,8 +258,6 @@ getUserAll();
 - 제너레이터는 `Symbol.iterator` 가진 이터러블이면서 동시에 `next`호출이 가능한 이터레이터다.
 - 제너레이터 함수를 사용하면 쉽게 이터러블을 생성할 수 있다.
 - 제너레이터는 값의 입력과 출력이 둘 다 가능하다. 이를 통해 비동기 처리도 가능하나 ES7의 `async/await`으로 더 쉽게 구현할 수 있다.
-
-<br/>
 
 # Reference
 

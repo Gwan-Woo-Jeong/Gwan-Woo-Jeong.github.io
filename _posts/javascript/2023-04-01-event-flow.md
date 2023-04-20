@@ -18,15 +18,11 @@ header:
 
 ![event-flow-thumb](https://miro.medium.com/v2/resize:fit:1400/1*7Iz_wjlurP2vVhkBpVVzgA.jpeg)
 
-<br />
-
 # 이벤트란?
 
 **이벤트**란 클릭이나 키보드 입력과 같이 일반적으로 사용자가 행하는 모든 동작을 일컫는다.
 
 사용자의 입력을 받기 위해, 우린 HTML 요소에 이벤트를 연결해주는데 이것을 **이벤트 바인딩**이라고 하고 이벤트를 우리의 의도대로 처리하는 행위를 **이벤트 핸들링**이라고 한다.
-
-<br />
 
 # 이벤트 플로우
 
@@ -42,12 +38,10 @@ HTML 요소들은 태그 안에 태그가 위치하는 식으로 계층적으로
 <a href="../../images/2023-04-01-event-flow/event-flow-start.png">
   <img src="../../images/2023-04-01-event-flow/event-flow-start.png" title="event-flow-start.png">
 <figcaption>
-사용자가 직접적으로 발생시킨 이벤트가 바인딩된 요소는 이벤트의 시발점이 되고,<br/> 이로 인해 중첩된 요소들은 이벤트 탑승을 하게 된다.
+사용자가 직접적으로 발생시킨 이벤트가 바인딩된 요소는 이벤트의 시발점이 되고,<br /> 이로 인해 중첩된 요소들은 이벤트 탑승을 하게 된다.
 </figcaption>
 </a>
 </figure>
-
-<br/>
 
 # target / currentTarget
 
@@ -88,13 +82,11 @@ body.addEventListener("click", (e) => {
 <a href="../../images/2023-04-01-event-flow/event-target.png">
   <img src="../../images/2023-04-01-event-flow/event-target.png" title="event-target.png">
   <figcaption>
-  target : 이벤트의 시발점이자 이벤트 플로우를 일으킨 요소 <br/>
-  currentTarget : 이벤트 플로우로 인해 이벤트 탑승을 한 요소<br/>
+  target : 이벤트의 시발점이자 이벤트 플로우를 일으킨 요소 <br />
+  currentTarget : 이벤트 플로우로 인해 이벤트 탑승을 한 요소<br />
   </figcaption>
 </a>
 </figure>
-
-<br />
 
 # 이벤트 전파 단계
 
@@ -139,8 +131,6 @@ addEventListener(type, listener, useCapture);
 > 이벤트가 발생한 요소로부터 생긴 거품이 외부로 퍼지는 모습을 상상해보자.
 
 이벤트 **버블링은 브라우저 이벤트의 기본 전파 방식**이다. 그러므로, 그림에서 아무런 이벤트 제어를 하지 않는다면 3 → 4 → 5 순으로 이벤트가 실행된다.
-
-<br />
 
 # 이벤트 제어 방법
 
@@ -193,8 +183,6 @@ document.body.addEventListener("click", (e) => {
 });
 ```
 
-<br />
-
 # 전파 방지 시 주의할 점
 
 이벤트 전파를 막는 `stopPropgation` 메서드는 나중에 이벤트 전파가 필요한 상황에 문제가 될 수 있다.
@@ -231,8 +219,6 @@ child.addEventListener("click", (e) => {
   print(e.target.ancestor + e.target.parent + "last"); // first second last
 });
 ```
-
-<br />
 
 # 이벤트 위임 (Event Delegation)
 
@@ -288,15 +274,11 @@ itemList.addEventListener("click", function (event) {
 
 ![https://joshua1988.github.io/images/posts/web/javascript/event/event-delegation-3.gif](https://joshua1988.github.io/images/posts/web/javascript/event/event-delegation-3.gif)
 
-<br />
-
 # 요약
 
 1. 브라우저 이벤트에는 캡처링 단계, 타겟 단계, 버블링 단계라는 이벤트 플로우가 존재한다. 캡처링은 이벤트가 상위 → 하위요소로, 버블링 (기본 값)은 하위 → 상위 요소로 전달된다.
 2. 이벤트 플로우 자체를 바꿀 순 없다. 이벤트 핸들러의 이벤트 객체를 조작하여 이벤트 전파를 막는 방식으로 제어해야한다.
 3. 이벤트 위임은 이벤트 전파를 활용하여 상위에서 하위 요소의 이벤트를 제어할 수 있는 방식이다.
-
-<br />
 
 # Reference
 

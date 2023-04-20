@@ -24,13 +24,9 @@ header:
 
 최근 코딩 테스트 문제를 풀면서 Map을 이용한 풀이들을 자주 접하였다. `key - value` 자료형이 필요할 때는 무조건 Object만 썼었는데 Map 객체가 궁금해졌다. 그래서, 이번 포스팅을 통해 Map이 무엇인지, 무엇이 좋고 어떻게 써야하는지 알아보려고 한다.
 
-<br />
-
 # Map이란?
 
 ES6부터 도입된 문법이다. Object와 마찬가지로 `key-value` 쌍으로 이루어진 자료 구조로 Map들은 key를 통해 아주 쉽게 데이터에 접근 할 수 있도록 한다. 사실 간단한 데이터 구조에선 이 둘은 크게 차이가 나지 않는다. 그런데도, Map이 나중에 도입된 이유는 약간의 **성능적인 이점**과 **사용의 편리함** 때문인 것 같다. 구체적인 내용은 지금부터 알아보자.
-
-<br />
 
 # Object와의 주요 차이점
 
@@ -54,8 +50,6 @@ ES6부터 도입된 문법이다. Object와 마찬가지로 `key-value` 쌍으�
 | 크기       | size 호출만으로 바로 알아낼 수 있다. ( O(1)의 시간 복잡도 ) | 모든 key를 구한 후, 그 길이를 구해야한다. ( O(n)의 시간 복잡도 )                           |
 | 성능       | key-value 잦은 추가 / 제거 최적화 되어있다.                 | key-value 잦은 추가 / 제거에 최적화 되어 있지 않다.                                        |     |
 
-<br />
-
 # 언제 무엇을 써야하나?
 
 ## Object
@@ -71,8 +65,6 @@ ES6부터 도입된 문법이다. Object와 마찬가지로 `key-value` 쌍으�
 - Prototype이 아니므로, 기본 key가 없다. 따라서, key 생성 시 중복될 위험이 적다.
 - Map 객체는 조회, 추가, 삭제 등 다양한 메소드를 지원하기 때문에, `key-value` 형태의 데이터를 다루기 용이하다.
 - Map은 key가 추가된 순으로 정렬되기 때문에, 그 자체가 iterable 하다. 따라서, 객체의 요소를 순회해야 하는 경우, 좋은 성능을 낸다.
-
-<br />
 
 # Map 객체 내부
 
@@ -253,8 +245,6 @@ map1.forEach((value, key, map) => {
 */
 ```
 
-<br />
-
 # WeakMap
 
 객체는 한번 생성되면 참조하는 요소가 없어도 재사용 될 가능성이 있다고 판단되어 메모리에서 삭제되지 않고 계속 남아있다. 이런 경우 메모리가 낭비될 위험이 존재한다.그래서 WeakMap이 등장한다.
@@ -293,7 +283,6 @@ WeakMap이 지원하는 메서드는 `get`, `set`, `delete`, `has` 뿐이다. �
 
 캐싱은 시간이 오래 걸리는 작업의 결과를 저장하여 연산 시간과 비용을 절약하는 기법이다. 똑같은 함수를 여러 번 호출하면 최초 호출 시만 연산을 하고, 이후엔  `cache` 에 저장된 값을 결과로 가져온다. `cache`에 Map 객체를 사용할 경우, `cache`를 수동으로 청소해주어야 하는 반면, WeakMap을 사용하면 자동 가비지 컬렉팅이되므로 그럴 필요가 없다.
 
-<br />
 # Reference
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)

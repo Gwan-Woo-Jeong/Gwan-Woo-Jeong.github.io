@@ -16,8 +16,6 @@ header:
 
 ![css-position-thumb](../../images/2023-04-03-css-box-model/css-position-thumb.png)
 
-<br />
-
 # position 속성
 
 position 속성은 웹 페이지에서 요소의 위치(position)를 배치하는 방식을 결정한다. 보통 요소의 위치 지정을 위해 부수적으로 top, left, bottom, right 속성 (오프셋)과 함께 사용한다. position 속성에는 다음 5가지 설정 값이 있다.
@@ -27,8 +25,6 @@ position 속성은 웹 페이지에서 요소의 위치(position)를 배치하�
 3. absolute
 4. fixed
 5. sticky
-
-<br />
 
 # static (default)
 
@@ -46,8 +42,6 @@ position 속성의 기본 설정 값으로, 요소를 HTML 문서에 작성된 �
 <p/>
 위 static의 예시를 바탕으로, 다른 position 속성을 비교하여 더 쉽게 알아보자.
 
-<br/>
-
 # relative
 
 기존 위치(static)를 벗어나 요소를 위치시킬 수 있는 속성이다. 요소의 위치는 기존 위치(static)을 기준으로 상대적으로 배치된다. 오프셋을 주어 상하좌우로 얼마나 떨어지게 할지 지정할 수 있다.
@@ -60,8 +54,6 @@ position 속성의 기본 설정 값으로, 요소를 HTML 문서에 작성된 �
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-<br />
 
 # absolute
 
@@ -84,8 +76,6 @@ DOM 트리 거슬러 올라가 상위 요소 중 `position: static`이 아닌 �
 
 그런데, 이번에는 3번째 요소에도 위치의 변화가 생겼다. `position: absolute` 인 요소는 기준이 되는 상위 요소에 위치가 귀속되고 나머지 하위 요소는 무시한다. 그래서, 3번째 요소가 마치 2번째 요소처럼 위치하게 된 것이다.
 
-<br />
-
 # fixed
 
 HTML 요소가 아닌 viewport(브라우저 전체화면)을 기준으로 요소를 위치시킨다. 따라서 브라우저를 스크롤 할 시에, 화면에서 요소의 위치가 고정(fixed)되는 효과를 준다.
@@ -101,8 +91,6 @@ HTML 요소가 아닌 viewport(브라우저 전체화면)을 기준으로 요소
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-<br />
-
 # sticky
 
 요소가 스크롤 중에 지정된 위치에 도달하면 들러붙어(sticky) 더 이상 스크롤 방향으로 움직이지 않는 효과를 일으킨다. 쉽게 말해, 설정한 위치에 도달하기 전까진 static이었다가 도달하면 fixed 효과를 내는 포지션 속성이다.
@@ -117,8 +105,6 @@ HTML 요소가 아닌 viewport(브라우저 전체화면)을 기준으로 요소
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-<br />
 
 # Reference
 
