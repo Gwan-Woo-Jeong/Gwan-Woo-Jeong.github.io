@@ -12,27 +12,27 @@
 
 # theme: 'minimal-mistakes-jekyll'
 # remote_theme: 'mmistakes/minimal-mistakes'
-minimal_mistakes_skin: 'default' # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale: 'en-US'
+locale: "en-US"
 title: "Gwan Woo's Devlog"
-title_separator: '|'
+title_separator: "|"
 subtitle: "For organizing what I've learned" # site tagline that appears below site title in masthead
-name: 'Gwan Woo Jeong'
-description: 'A website for organizing what I have learned.'
-url: 'https://gwan-woo-jeong.github.io'
+name: "Gwan Woo Jeong"
+description: "A website for organizing what I have learned."
+url: "https://gwan-woo-jeong.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
-repository: 'Gwan-Woo-Jeong/Gwan-Woo-Jeong.github.io' # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository: "Gwan-Woo-Jeong/Gwan-Woo-Jeong.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo: 'assets/images/technologist.png' # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+logo: "assets/images/technologist.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs: true # true, false (default)
 words_per_minute: 200
 comments:
-  provider: 'utterances' # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider: "utterances" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
-    shortname: 'gwan-woo-jeong' # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname: "gwan-woo-jeong" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server: # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -41,8 +41,8 @@ comments:
     num_posts: # 5 (default)
     colorscheme: # "light" (default), "dark"
   utterances:
-    theme: 'github-light' # "github-light" (default), "github-dark"
-    issue_term: 'pathname' # "pathname" (default)
+    theme: "github-light" # "github-light" (default), "github-dark"
+    issue_term: "pathname" # "pathname" (default)
   giscus:
     repo_id: # Shown during giscus setup at https://giscus.app
     category_name: # Full text name of the category
@@ -75,7 +75,7 @@ google:
 # SEO Related
 google_site_verification:
 bing_site_verification:
-naver_site_verification: '52ccbef295f029f4ded9dc9912221d1224fee854'
+naver_site_verification: "52ccbef295f029f4ded9dc9912221d1224fee854"
 yandex_site_verification:
 baidu_site_verification:
 
@@ -96,9 +96,9 @@ social:
 
 # Analytics
 analytics:
-  provider: 'google-gtag' # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id: 'G-WC1SBQWH6D'
+    tracking_id: "G-WC1SBQWH6D"
     anonymize_ip: false
 
 # Site Author
@@ -131,35 +131,35 @@ author:
 # Site Footer
 footer:
   links:
-    - label: 'Twitter'
-      icon: 'fab fa-fw fa-twitter-square'
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
       # url:
-    - label: 'Facebook'
-      icon: 'fab fa-fw fa-facebook-square'
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
       # url:
-    - label: 'GitHub'
-      icon: 'fab fa-fw fa-github'
-      url: 'https://github.com/Gwan-Woo-Jeong'
-    - label: 'GitLab'
-      icon: 'fab fa-fw fa-gitlab'
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Gwan-Woo-Jeong"
+    - label: "GitLab"
+      icon: "fab fa-fw fa-gitlab"
       # url:
-    - label: 'Bitbucket'
-      icon: 'fab fa-fw fa-bitbucket'
+    - label: "Bitbucket"
+      icon: "fab fa-fw fa-bitbucket"
       # url:
-    - label: 'Instagram'
-      icon: 'fab fa-fw fa-instagram'
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
       # url:
-    - label: 'Email'
-      icon: 'fas fa-fw fa-envelope-square'
-      url: 'mailto:gwanuuoo@gmail.com'
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:gwanuuoo@gmail.com"
 
 # Reading Files
 include:
   - .htaccess
   - _pages
 exclude:
-  - '*.sublime-project'
-  - '*.sublime-workspace'
+  - "*.sublime-project"
+  - "*.sublime-workspace"
   - vendor
   - .asset-cache
   - .bundle
@@ -187,8 +187,8 @@ exclude:
 keep_files:
   - .git
   - .svn
-encoding: 'utf-8'
-markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Conversion
 markdown: kramdown
@@ -274,7 +274,7 @@ compress_html:
 defaults:
   # _posts
   - scope:
-      path: ''
+      path: ""
       type: posts
     values:
       layout: single
@@ -282,11 +282,13 @@ defaults:
       read_time: false
       comments: true
       share: false
-      related: false
+      related: true
       show_date: true
       sidebar_main: true
+      applause_button: true
 
-date_format: '%Y-%m-%d'
+date_format: "%Y-%m-%d"
 after_footer_scripts:
   - /assets/js/custom/dark-theme.js
   - /assets/js/custom/to-top.js
+  - /assets/js/custom/get-multiple-claps.js

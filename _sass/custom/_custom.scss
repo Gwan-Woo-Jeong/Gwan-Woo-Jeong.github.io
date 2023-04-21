@@ -33,3 +33,45 @@
   z-index: 1000;
   cursor: pointer;
 }
+
+// applause-button
+applause-button {
+  width: 80px;
+  height: 80px;
+  margin: 53px auto 83px auto;
+
+  .style-root {
+    fill: $highlight-color !important;
+    stroke: $highlight-color !important;
+    color: $highlight-color !important;
+
+    .count-container {
+      .count {
+        color: $highlight-color;
+      }
+    }
+  }
+}
+
+.clap-count {
+  color: $muted-text-color;
+
+  svg {
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+    margin-left: 4px;
+    margin-right: 4px;
+    transform: translate(0px, -1px);
+    stroke: $muted-text-color;
+    stroke-width: 2px;
+  }
+
+  .flat {
+    fill: none;
+  }
+
+  .outline {
+    fill: $muted-text-color;
+  }
+}

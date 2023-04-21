@@ -10,6 +10,14 @@
       </span>
     {% endif %}
 
+    {% if page.url.size > 1 %}
+      <span class="clap-count" data-url="{{site.url}}{{page.url}}"></span>
+    {% else %}
+      <span class="clap-count" data-url="{{ post.url | absolute_url }}"></span>
+    {% endif %}
+
+
+
     {% if document.read_time and document.show_date %}<span class="page__meta-sep"></span>{% endif %}
 
     {% if document.read_time %}

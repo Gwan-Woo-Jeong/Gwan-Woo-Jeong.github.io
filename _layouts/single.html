@@ -35,7 +35,8 @@ breadcrumbs.html %} {% endunless %} {% endif %}
             " }}</a
           >
         </h1>
-        {% endif %} {% include page__meta.html %}
+        {% endif %} 
+        {% include page__meta.html %}
       </header>
       {% endunless %}
 
@@ -64,7 +65,15 @@ breadcrumbs.html %} {% endunless %} {% endif %}
         {% endif %}
       </section>
 
+
       <footer class="page__meta">
+        {% if page.applause_button %}
+          <applause-button class="mb6"
+            color={{ site.accent_color | default:'rgb(79,177,186)' }}
+            url={{site.url}}{{page.url}} >
+          </applause-button>
+        {% endif %}
+
         {% if site.data.ui-text[site.locale].meta_label %}
         <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %} {% include page__taxonomy.html %} {% include page__date.html %}
