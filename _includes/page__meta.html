@@ -10,10 +10,10 @@
       </span>
     {% endif %}
 
-    {% if page.url.size > 1 %}
-      <span class="clap-count" data-url="{{site.url}}{{page.url}}"></span>
-    {% else %}
+    {% if post.url.size > 1 %}
       <span class="clap-count" data-url="{{ post.url | absolute_url }}"></span>
+    {% else %}
+      <span class="clap-count" data-url="{{site.url}}{{page.url}}"></span>
     {% endif %}
 
 
