@@ -1,7 +1,7 @@
 ---
 layout: single
 title: '프로젝트 회고 : Review Auto-Installer'
-categories: project
+categories: Project
 tag: [project, nodeJS]
 toc: true
 toc_sticky: true

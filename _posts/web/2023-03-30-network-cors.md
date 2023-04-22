@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[Network] CORS란?"
-categories: web-network
+title: "CORS란?"
+categories: Network
 tag: [Web, Network, CORS]
 toc: true
 toc_sticky: true

@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[JavaScript] 이벤트 루프란?"
-categories: javascript
+title: "이벤트 루프란?"
+categories: JavaScript
 tag: [Event Loop, Microtask Queue, Macrotask Queue]
 toc: true
 toc_sticky: true

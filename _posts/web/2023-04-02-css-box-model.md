@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[CSS] 박스모델이란?"
-categories: html-css
+title: "박스모델이란?"
+categories: HTML-CSS 
 tag: [Box Model, CSS]
 toc: true
 toc_sticky: true

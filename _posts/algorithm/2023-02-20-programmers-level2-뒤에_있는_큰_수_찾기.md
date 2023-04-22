@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Algorithm] Programmers - Level 2 : 뒤에 있는 큰 수 찾기'
-categories: algorithm
+title: 'Programmers - Level 2 : 뒤에 있는 큰 수 찾기'
+categories: Algorithm
 tag: [javascript, algorithm, programmers]
 toc: true
 toc_sticky: true

@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Network] HTTP란?'
-categories: web-network
+title: 'HTTP란?'
+categories: Network
 tag: [Web, Netwrok, HTTP]
 toc: true
 toc_sticky: true

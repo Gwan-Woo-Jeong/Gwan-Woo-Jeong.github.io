@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[JavaScript] 타입스크립트란?"
-categories: javascript
+title: "타입스크립트란?"
+categories: JavaScript
 tag: [JavaScript, TypeScript]
 toc: true
 toc_sticky: true

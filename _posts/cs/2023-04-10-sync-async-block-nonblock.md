@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[CS] 동기와 비동기 & 블로킹과 논블로킹'
-categories: cs
+title: '동기와 비동기 & 블로킹과 논블로킹'
+categories: CS
 tag: [synchronous, asynchronous, block, non-block]
 toc: true
 toc_sticky: true

@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[React] 문자인증 타이머 만들기'
-categories: react
+title: '문자인증 타이머 만들기'
+categories: React
 tag: [react, frontend, toy]
 toc: true
 toc_sticky: true
@@ -32,7 +32,7 @@ const [minutes, setMinutes] = useState(1);
 const [seconds, setSeconds] = useState(30);
 ```
 
-이제 타이머의 가장 기본인 카운트다운을 구현해보자. 1초가 지날때마다 `minutes`와 `seconds`를 업데이트 해주어야 한다. Web API인  `setInterval` 함수를 사용하여 1초마다 남은 시간을 1초씩 차감하도록 하자.
+이제 타이머의 가장 기본인 카운트다운을 구현해보자. 1초가 지날때마다 `minutes`와 `seconds`를 업데이트 해주어야 한다. Web API인 `setInterval` 함수를 사용하여 1초마다 남은 시간을 1초씩 차감하도록 하자.
 
 ```jsx
 /* Timer.js */
@@ -94,7 +94,7 @@ function Timer() {
       if (parseInt(seconds, 10) === 0) {
         if (parseInt(minutes, 10) === 0) {
           clearInterval(countdown);
-          setTimer('stop');
+          setTimer("stop");
         } else {
           setMinutes(parseInt(minutes, 10) - 1);
           setSeconds(59);
@@ -107,7 +107,7 @@ function Timer() {
 
   return (
     <>
-    {minutes < 10 ? `0${minutes}` : minutes}:
+      {minutes < 10 ? `0${minutes}` : minutes}:
       {seconds < 10 ? `0${seconds}` : seconds}
     </>
   );
@@ -173,7 +173,7 @@ useEffect(() => {
 function Timer({min, sec, setTimer, timer}) {
   const [minutes, setMinutes] = useState(min);
   const [seconds, setSeconds] = useState(sec);
-	
+
 	...
 	useEffect(() => {
 		...
@@ -186,7 +186,7 @@ function Timer({min, sec, setTimer, timer}) {
 	  ...
 	}, [minutes, seconds, timer, setTimer, min, sec]);
 	...
-} 
+}
 ```
 
 ## 렌더링
@@ -214,7 +214,7 @@ function Timer({min, sec, setTimer, timer}) {
 	};
 
 	return getTime();
-} 
+}
 ```
 
 ## 최종 코드
@@ -224,21 +224,21 @@ function Timer({min, sec, setTimer, timer}) {
 ```jsx
 /* Timer.js */
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
-function Timer({min, sec, timer, setTimer}) {
+function Timer({ min, sec, timer, setTimer }) {
   const [minutes, setMinutes] = useState(min);
   const [seconds, setSeconds] = useState(sec);
 
   useEffect(() => {
-    if (timer === 'initial' || timer === 'stop') {
+    if (timer === "initial" || timer === "stop") {
       return;
     }
 
-    if (timer === 'restart') {
+    if (timer === "restart") {
       setMinutes(min);
       setSeconds(sec);
-      setTimer('start');
+      setTimer("start");
     }
 
     const countdown = setInterval(() => {
@@ -248,7 +248,7 @@ function Timer({min, sec, timer, setTimer}) {
       if (parseInt(seconds, 10) === 0) {
         if (parseInt(minutes, 10) === 0) {
           clearInterval(countdown);
-          setTimer('stop');
+          setTimer("stop");
         } else {
           setMinutes(parseInt(minutes, 10) - 1);
           setSeconds(59);
@@ -260,14 +260,14 @@ function Timer({min, sec, timer, setTimer}) {
   }, [minutes, seconds, timer, setTimer, min, sec]);
 
   const getTime = () => {
-    if (timer === 'start' || timer === 'restart') {
+    if (timer === "start" || timer === "restart") {
       return (
         <>
-        {minutes < 10 ? `0${minutes}` : minutes}:
+          {minutes < 10 ? `0${minutes}` : minutes}:
           {seconds < 10 ? `0${seconds}` : seconds}
         </>
       );
-    } else if (timer === 'stop' && minutes === 0 && seconds === 0) {
+    } else if (timer === "stop" && minutes === 0 && seconds === 0) {
       return <>시간 만료</>;
     } else {
       return null;

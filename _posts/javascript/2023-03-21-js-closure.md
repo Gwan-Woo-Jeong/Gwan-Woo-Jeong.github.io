@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[JavaScript] 클로저란?'
-categories: javascript
+title: '클로저란?'
+categories: JavaScript
 tag: [javascript, ES6, closure]
 toc: true
 toc_sticky: true

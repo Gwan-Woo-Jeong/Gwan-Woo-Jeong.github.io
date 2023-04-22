@@ -49,7 +49,6 @@ body {
 
   .page__inner-wrap {
     float: left;
-    margin-top: 2em;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
@@ -535,7 +534,6 @@ body {
 
 .page__related {
   @include clearfix();
-  // float: left;
   margin-top: 1em;
 
   @include breakpoint($large) {
@@ -584,5 +582,11 @@ body {
     @include breakpoint($x-large) {
       padding-right: 0;
     }
+  }
+}
+
+.page__category {
+  i {
+    margin-left: 3px;
   }
 }

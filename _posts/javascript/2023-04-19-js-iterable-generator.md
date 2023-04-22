@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[JavaScript] 이터러블 & 이터레이터 & 제너레이터"
-categories: javascript
+title: "이터러블 & 이터레이터 & 제너레이터"
+categories: JavaScript
 tag: [JavaScript, TypeScript]
 toc: true
 toc_sticky: true

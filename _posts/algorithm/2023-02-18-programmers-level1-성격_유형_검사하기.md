@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Algorithm] Programmers - Level 1 :  성격 유형 검사하기'
-categories: algorithm
+title: 'Programmers - Level 1 :  성격 유형 검사하기'
+categories: Algorithm
 tag: [javascript, algorithm, programmers]
 toc: true
 toc_sticky: true

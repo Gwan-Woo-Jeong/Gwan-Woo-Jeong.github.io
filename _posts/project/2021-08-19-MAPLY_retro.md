@@ -1,7 +1,7 @@
 ---
 layout: single
 title: '프로젝트 회고 : MAPLY'
-categories: project
+categories: Project
 tag: [project, backend, NodeJS]
 toc: true
 toc_sticky: true
@@ -68,7 +68,12 @@ let refinedData = myPlaylists.map(async (each) => {
   const { id, playlist_name } = each.dataValues;
   const firstVideo = await video.findOne({ where: { playlist_id: id } });
   const count = await video.count({ where: { playlist_id: id } });
-  return { id, playlist_name, count, playlist_thumbnail: firstVideo !== null ? firstVideo.thumbnail : 'empty' };
+  return {
+    id,
+    playlist_name,
+    count,
+    playlist_thumbnail: firstVideo !== null ? firstVideo.thumbnail : "empty",
+  };
 });
 
 refinedData = await Promise.all(refinedData);
@@ -202,7 +207,7 @@ async checkToken(req, res, next) {
 axios.interceptors.response.use(function (res) {
   if (res.data.error_code === 401) {
     localStorage.clear(); // 로컬 스토리지의 토큰을 강제로 삭제
-    alert('토큰이 만료되었습니다. 다시 로그인 해주세요!');
+    alert("토큰이 만료되었습니다. 다시 로그인 해주세요!");
     window.location.reload();
   }
   return res;

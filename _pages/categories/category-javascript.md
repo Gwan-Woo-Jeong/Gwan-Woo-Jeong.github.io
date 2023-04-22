@@ -1,5 +1,5 @@
 ---
-title: "Javascript"
+title: "JavaScript"
 layout: archive
 permalink: categories/javascript
 author_profile: true
@@ -8,5 +8,5 @@ entries_layout: grid
 classes: wide
 ---
 
-{% assign posts = site.categories.javascript %} {% for post in posts %} {% include archive-single.html type=page.entries_layout
+{% assign posts = site.categories.JavaScript %} {% for post in posts %} {% include archive-single.html type=page.entries_layout
 %} {% endfor %}

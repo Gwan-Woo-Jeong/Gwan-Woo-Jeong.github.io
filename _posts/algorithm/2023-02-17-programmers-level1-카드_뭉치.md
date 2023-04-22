@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Algorithm] Programmers - Level 1 :  카드 뭉치'
-categories: algorithm
+title: 'Programmers - Level 1 :  카드 뭉치'
+categories: Algorithm
 tag: [javascript, algorithm, programmers]
 toc: true
 toc_sticky: true

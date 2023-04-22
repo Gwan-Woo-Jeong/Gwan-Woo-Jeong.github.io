@@ -8,5 +8,5 @@ entries_layout: grid
 classes: wide
 ---
 
-{% assign posts = site.categories.html-css %} {% for post in posts %} {% include archive-single.html type=page.entries_layout
+{% assign posts = site.categories.HTML-CSS %} {% for post in posts %} {% include archive-single.html type=page.entries_layout
 %} {% endfor %}

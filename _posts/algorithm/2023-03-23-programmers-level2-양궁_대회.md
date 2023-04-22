@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Algorithm] Programmers - Level 2 : 양궁 대회'
-categories: algorithm
+title: 'Programmers - Level 2 : 양궁 대회'
+categories: Algorithm
 tag: [javascript, algorithm, programmers, bfs]
 toc: true
 toc_sticky: true

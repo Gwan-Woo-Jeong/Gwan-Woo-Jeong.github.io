@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[JavaScript] 비동기 처리 (Promise & async/await)"
-categories: javascript
+title: "비동기 처리 (Promise & async/await)"
+categories: JavaScript
 tag: [JavaScript, Promise, Async/Await]
 toc: true
 toc_sticky: true

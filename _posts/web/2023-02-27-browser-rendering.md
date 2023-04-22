@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Web] 브라우저의 렌더링 과정'
-categories: web-etc
+title: '브라우저의 렌더링 과정'
+categories: Web-ETC
 tag: [Browser, HTML, CSS, Javascript]
 toc: true
 toc_sticky: true

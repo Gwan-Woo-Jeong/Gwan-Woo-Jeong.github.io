@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Algorithm] Programmers - Level 2 : 무인도 여행'
-categories: algorithm
+title: 'Programmers - Level 2 : 무인도 여행'
+categories: Algorithm
 tag: [javascript, algorithm, programmers]
 toc: true
 toc_sticky: true

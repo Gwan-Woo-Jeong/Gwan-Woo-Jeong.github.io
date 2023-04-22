@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[JavaScript] 이벤트 플로우 (버블링, 캡처링)"
-categories: javascript
+title: "이벤트 플로우 (버블링, 캡처링)"
+categories: JavaScript
 tag: [Browser, Event Flow, Event Capturing, Event Bubbling]
 toc: true
 toc_sticky: true

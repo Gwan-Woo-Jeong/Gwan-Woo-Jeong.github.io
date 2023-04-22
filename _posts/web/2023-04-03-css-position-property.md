@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[CSS] position 속성 이해하기"
-categories: html-css
+title: "position 속성 이해하기"
+categories: HTML-CSS
 tag: [CSS, position]
 toc: true
 toc_sticky: true

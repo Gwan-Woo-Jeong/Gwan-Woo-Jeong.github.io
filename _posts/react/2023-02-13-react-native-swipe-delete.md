@@ -1,7 +1,7 @@
 ---
 layout: single
 title: '[React Native] Swipeable로 밀어서 삭제 구현해보기'
-categories: react
+categories: React
 tag: [react native, frontend, tutorial]
 toc: true
 toc_sticky: true

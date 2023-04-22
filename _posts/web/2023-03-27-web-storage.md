@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Web] 브라우저 저장소 (Cookie, Session, Web Storage)'
-categories: web-etc
+title: '브라우저 저장소 (Cookie, Session, Web Storage)'
+categories: Web-ETC
 tag: [Web, Netwrok, HTTP]
 toc: true
 toc_sticky: true

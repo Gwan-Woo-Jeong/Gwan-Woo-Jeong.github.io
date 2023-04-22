@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 'Minimal Mistakes 다크모드 버튼 만들기'
-categories: blog
+categories: Blog
 tag: [blog, theme, dark mode]
 toc: true
 toc_sticky: true
@@ -56,8 +56,8 @@ header:
 
 @charset "utf-8";
 
-@import 'minimal-mistakes/skins/default'; // 변경
-@import 'minimal-mistakes';
+@import "minimal-mistakes/skins/default"; // 변경
+@import "minimal-mistakes";
 ```
 
 또 다른 다크모드 전용 파일 `assets/css/main-dark.scss` 을 만들자.
@@ -67,8 +67,8 @@ header:
 
 @charset "utf-8";
 
-@import 'minimal-mistakes/skins/dark'; // 변경
-@import 'minimal-mistakes';
+@import "minimal-mistakes/skins/dark"; // 변경
+@import "minimal-mistakes";
 ```
 
 그 다음, head 부분에서 앞서 만든 두 개의 CSS 파일을 모두 불러올 수 있게 해주자.
@@ -77,7 +77,10 @@ header:
 /* _includes/head.html */
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 <!-- 추가 -->
-<link rel="stylesheet" href="{{ '/assets/css/main_dark.css' | relative_url }}" />
+<link
+  rel="stylesheet"
+  href="{{ '/assets/css/main_dark.css' | relative_url }}"
+/>
 <!-- ... -->
 ```
 
@@ -92,26 +95,30 @@ header:
 ```jsx
 /* assets/js/custom/dark-theme.js */
 
-const defaultTheme = [...document.styleSheets].find((style) => /(main.css)$/.test(style.href));
-const darkTheme = [...document.styleSheets].find((style) => /(main_dark.css)$/.test(style.href));
+const defaultTheme = [...document.styleSheets].find((style) =>
+  /(main.css)$/.test(style.href)
+);
+const darkTheme = [...document.styleSheets].find((style) =>
+  /(main_dark.css)$/.test(style.href)
+);
 
-const toggleThemeBtn = document.getElementById('toggle-theme');
+const toggleThemeBtn = document.getElementById("toggle-theme");
 
 const toLight = () => {
   toggleThemeBtn.innerHTML = `<i class="fa-solid fa-sun"></i>`;
   defaultTheme.disabled = false;
   darkTheme.disabled = true;
-  localStorage.setItem('theme', 'default');
+  localStorage.setItem("theme", "default");
 };
 
 const toDark = () => {
   toggleThemeBtn.innerHTML = `<i class="fa-solid fa-moon"></i>`;
   defaultTheme.disabled = true;
   darkTheme.disabled = false;
-  localStorage.setItem('theme', 'dark');
+  localStorage.setItem("theme", "dark");
 };
 
-const currentTheme = () => localStorage.getItem('theme');
+const currentTheme = () => localStorage.getItem("theme");
 
 const setDarkMode = (isDark) => {
   if (isDark) {
@@ -123,12 +130,12 @@ const setDarkMode = (isDark) => {
 
 if (darkTheme) {
   let isDarkMode = false;
-  if (currentTheme() === 'dark') {
+  if (currentTheme() === "dark") {
     isDarkMode = true;
-  } else if (currentTheme() === 'default') {
+  } else if (currentTheme() === "default") {
     isDarkMode = false;
   } else {
-    isDarkMode = matchMedia('(prefers-color-scheme: dark)').matches;
+    isDarkMode = matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
   if (toggleThemeBtn) {
@@ -140,10 +147,10 @@ if (darkTheme) {
   }
 
   const changeTheme = () => {
-    setDarkMode(currentTheme() === 'dark');
+    setDarkMode(currentTheme() === "dark");
   };
 
-  toggleThemeBtn.addEventListener('click', changeTheme);
+  toggleThemeBtn.addEventListener("click", changeTheme);
 }
 ```
 

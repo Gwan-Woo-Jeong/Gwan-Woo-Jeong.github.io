@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Network] GET과 POST의 차이'
-categories: web-network
+title: 'GET과 POST의 차이'
+categories: Network
 tag: [Web, Netwrok, HTTP Method, GET, POST]
 toc: true
 toc_sticky: true

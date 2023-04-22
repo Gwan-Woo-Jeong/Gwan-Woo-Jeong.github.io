@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[Algorithm] Programmers - Level 1 :  푸드 파이트 대회'
-categories: algorithm
+title: 'Programmers - Level 1 :  푸드 파이트 대회'
+categories: Algorithm
 tag: [javascript, algorithm, programmers]
 toc: true
 toc_sticky: true

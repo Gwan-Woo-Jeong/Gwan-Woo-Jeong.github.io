@@ -1,7 +1,7 @@
 ---
 layout: single
-title: '[JavaScript] Map 객체에 대해서 알아보자'
-categories: javascript
+title: 'Map 객체에 대해서 알아보자'
+categories: JavaScript
 tag: [javascript, ES6, Map]
 toc: true
 toc_sticky: true

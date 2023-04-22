@@ -1,7 +1,7 @@
 ---
 layout: single
 title: '프로젝트 회고 : ASSIST - part 1'
-categories: project
+categories: Project
 tag: [project, frontend, React Native]
 toc: true
 toc_sticky: true

@@ -9,5 +9,5 @@ classes: wide
 
 ---
 
-{% assign posts = site.categories.react %} {% for post in posts %} {% include archive-single.html type=page.entries_layout
+{% assign posts = site.categories.React %} {% for post in posts %} {% include archive-single.html type=page.entries_layout
 %} {% endfor %}

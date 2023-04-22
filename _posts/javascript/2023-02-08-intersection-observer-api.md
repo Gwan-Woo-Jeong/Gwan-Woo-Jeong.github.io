@@ -1,7 +1,7 @@
 ---
 layout: single
 title: 'Intersection Observer API를 활용한 무한 스크롤'
-categories: javascript
+categories: JavaScript
 tag: [javascript, Web API]
 toc: true
 toc_sticky: true
