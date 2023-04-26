@@ -39,16 +39,16 @@ header:
 
 브라우저는 가장 먼저 HTML 파일을 다운로드 받고 첫 줄부터 차례대로 해석(파싱)한다. 단순 텍스트에서 자신이 이해할 수 있는 트리 형태의 객체 자료구조인 **DOM**으로 변환한다. 파싱 중 `<script />` , `<link />` , `<img />` 태그를 만나면 해당 리소스를 요청하고 다운로드한다. 리소스 중 CSS 파일이 있다면, 마찬가지로 CSS 문서 또한 **CSSOM**으로 해석한다.
 
-<a href="https://file.notion.so/f/s/40ad46f6-28ec-4514-8660-c734bc3bdd51/CSSOM.png?id=7a9a6886-9b98-43ff-987e-e422b5bf48f6&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481662093&signature=R6YfXUVIVlhlpREX9bYtF7BAwVPja3vT_8pgt1em40w&downloadName=CSSOM.png">
-  <img src="https://file.notion.so/f/s/40ad46f6-28ec-4514-8660-c734bc3bdd51/CSSOM.png?id=7a9a6886-9b98-43ff-987e-e422b5bf48f6&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481662093&signature=R6YfXUVIVlhlpREX9bYtF7BAwVPja3vT_8pgt1em40w&downloadName=CSSOM.png" title="CSSOM.png">
+<a href="../../images/2023-02-27-browser-rendering/CSSOM.png">
+  <img src="../../images/2023-02-27-browser-rendering/CSSOM.png" title="CSSOM.png">
 </a>
 
 ## 스타일 (⇒ 렌더 트리)
 
 이렇게 완성된 HTML 요소들의 관계도(DOM 트리)와 CSS 선택자들의 관계도(CSSOM 트리)를 매칭시키는 스타일 단계에 들어간다. 이 단계를 거치면, 렌더 트리(Render Tree)가 생성되고 브라우저는 이제 본격적으로 화면을 그릴 준비가 된다.
 
-<a href="https://file.notion.so/f/s/884088ba-bb9c-49c3-9d01-2fce1d74cef3/render-tree.png?id=234363df-8853-44e2-9b9a-0ee53a0f4588&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481695547&signature=uKYKFi48iTWHJ4zgPeEjVASIyyOI4Lgb-_6BHGDf6i0&downloadName=render-tree.png">
-  <img src="https://file.notion.so/f/s/884088ba-bb9c-49c3-9d01-2fce1d74cef3/render-tree.png?id=234363df-8853-44e2-9b9a-0ee53a0f4588&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481695547&signature=uKYKFi48iTWHJ4zgPeEjVASIyyOI4Lgb-_6BHGDf6i0&downloadName=render-tree.png" title="render-tree.png">
+<a href="../../images/2023-02-27-browser-rendering/render-tree.png">
+  <img src="../../images/2023-02-27-browser-rendering/render-tree.png" title="render-tree.png">
 </a>
 
 ## 레이아웃 (⇒ 위치/크기 계산)
@@ -56,8 +56,8 @@ header:
 우리가 그림을 그릴 때, 색칠을 하기 전에 스케치를 하는 것처럼 브라우저도 레이아웃 단계를 거쳐 먼저 구도를 잡는다. 브라우저는 렌더 트리의 최상위 노드부터 최하위 노드까지 순회하며 각 노드들의 정확한 위치와 크기를 계산한다.
 
 <figure>
-<a href="https://file.notion.so/f/s/65bde9a2-2a11-4e0a-9ded-efdde1d2f083/Screen_Recording_2023-04-24_at_2.32.29_PM.gif?id=54146e51-65fa-4256-bb86-1e8d35438a2a&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481711290&signature=rJ_CNaxgrNpnjZNzqCjHYMuHraEhuj9WRhUjHLRap6g&downloadName=Screen+Recording+2023-04-24+at+2.32.29+PM.gif">
-  <img src="https://file.notion.so/f/s/65bde9a2-2a11-4e0a-9ded-efdde1d2f083/Screen_Recording_2023-04-24_at_2.32.29_PM.gif?id=54146e51-65fa-4256-bb86-1e8d35438a2a&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481711290&signature=rJ_CNaxgrNpnjZNzqCjHYMuHraEhuj9WRhUjHLRap6g&downloadName=Screen+Recording+2023-04-24+at+2.32.29+PM.gif" title="layout.gif">
+<a href="../../images/2023-04-24-frontend-performance-optimization/layout-pixel.gif">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/layout-pixel.gif" title="layout-pixel.gif">
   <figcaption>만약 CSS 속성 값이 %라면 픽셀 단위(px)로 변환하여 렌더 트리에 반영한다.</figcaption>
 </a>
 </figure>
@@ -70,8 +70,8 @@ header:
 
 페인트 단계에서 브라우저는 위치와 관련 없는 CSS 속성 (색상, 투명도 등)을 적용한다.
 
-<a href="https://file.notion.so/f/s/b12f7477-b3d6-4d6c-92b6-71631cdcef9c/Screen_Shot_2023-04-24_at_2.44.37_PM.png?id=044ae22a-6178-4ac1-8003-61d4236603c6&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481736351&signature=fx8nwNxocAnMT6fZnpPZAsaGlquEGWvwQ6cVFXyPoos&downloadName=Screen+Shot+2023-04-24+at+2.44.37+PM.png">
-  <img src="https://file.notion.so/f/s/b12f7477-b3d6-4d6c-92b6-71631cdcef9c/Screen_Shot_2023-04-24_at_2.44.37_PM.png?id=044ae22a-6178-4ac1-8003-61d4236603c6&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481736351&signature=fx8nwNxocAnMT6fZnpPZAsaGlquEGWvwQ6cVFXyPoos&downloadName=Screen+Shot+2023-04-24+at+2.44.37+PM.png" title="render-tree.png">
+<a href="https://i.pinimg.com/originals/b7/89/9b/b7899b0f68ae40dcbc2f9843473cdcea.png">
+  <img src="https://i.pinimg.com/originals/b7/89/9b/b7899b0f68ae40dcbc2f9843473cdcea.png" title="paint-layers.png">
 </a>
 
 ## 합성 & 렌더 (⇒ 웹 페이지)
@@ -93,8 +93,8 @@ header:
 리플로우는 전체 픽셀을 다시 계산해야 되는 만큼 부하가 크고 렌더링 시간이 더 오래 걸린다. 리페인트는 이미 계산된 픽셀 값으로 레이어를 그리기 때문에 부하가 덜 하다. 따라서, 불필요한 리플로우는 최대한 방지해야한다.
 
 <figure>
-<a href="https://file.notion.so/f/s/8096ac6c-d7f7-46ab-b729-2e496cbeb1e6/reflow-vs-repaint.png?id=12891eda-6a0f-4cdf-aead-bf156ef1a89a&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481750902&signature=kZb-akeVWd4Id7-4bXNKC9GOFlylV0lfhbyqMnzAA6o&downloadName=reflow-vs-repaint.png">
-  <img src="https://file.notion.so/f/s/8096ac6c-d7f7-46ab-b729-2e496cbeb1e6/reflow-vs-repaint.png?id=12891eda-6a0f-4cdf-aead-bf156ef1a89a&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481750902&signature=kZb-akeVWd4Id7-4bXNKC9GOFlylV0lfhbyqMnzAA6o&downloadName=reflow-vs-repaint.png" title="reflow-repaint.png">
+<a href="../../images/2023-02-27-browser-rendering/reflow-vs-repaint.png">
+  <img src="../../images/2023-02-27-browser-rendering/reflow-vs-repaint.png" title="reflow-vs-repaint.png">
   <figcaption>리플로우는 모든 렌더링 과정을 거치기 때문에, 렌더링 성능에 치명적이다. 리플로우는 되도록 피하자!</figcaption>
 </a>
 </figure>
@@ -120,8 +120,8 @@ header:
 예전 웹 페이지는 브라우저가 얼마나 빨리 리소스를 파싱하고 렌더링을 시작할 수 있는지 빠른 웹페이지의 기준이었다. 네비게이션 타이밍 모델은 이러한 브라우저의 주요 이벤트를 기준으로 성능을 측정할 수 있도록 돕는다.
 
 <figure>
-<a href="https://file.notion.so/f/s/d0844f2c-5602-4728-8ff4-e176ea116e1c/Screen_Shot_2023-04-24_at_12.16.22_PM.png?id=0ef78d98-e689-400e-b78d-ab1b69915f41&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481765801&signature=HFEIppuiqzsawKa7tWPB5me3LRDNC6CdQcNTl7dHHWI&downloadName=Screen+Shot+2023-04-24+at+12.16.22+PM.png">
-  <img src="https://file.notion.so/f/s/d0844f2c-5602-4728-8ff4-e176ea116e1c/Screen_Shot_2023-04-24_at_12.16.22_PM.png?id=0ef78d98-e689-400e-b78d-ab1b69915f41&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481765801&signature=HFEIppuiqzsawKa7tWPB5me3LRDNC6CdQcNTl7dHHWI&downloadName=Screen+Shot+2023-04-24+at+12.16.22+PM.png" title="navigation-model.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/navigation-model-front-opt.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/navigation-model-front-opt.png" title="navigation-model-front-opt.png">
   <figcaption>네비게이션 모델에서 리소스를 다운받은 이후의 단계가 프론트엔드 최적화를 시킬 수 있는 영역이다.</figcaption>
 </a>
 </figure>
@@ -139,8 +139,8 @@ header:
 하지만 개발 패러다임이 <a href="../../web-etc/csr-ssr/#mpa">MPA(Multiple Page Application)</a>에서 <a href="../../web-etc/csr-ssr/#spa">SPA(Single Page Application)</a>으로 변화하면서 기존 측정 방식으로 성능을 판단하기 어려워졌다. SPA에선 파싱할 HTML 코드량이 적어 DOMContentLoaded나 load 이벤트가 빠르게 발생했다. 하지만, 웹 사이트가 <a href="../../web-etc/csr-ssr/#csr">CSR(Client Side Rendering)</a>로 동작하면서 사용자가 실질적인 컨텐츠를 볼 수 있는 시간은 느려졌다.
 
 <figure>
-<a href="https://file.notion.so/f/s/9d725ca3-3d52-4fea-a100-4593a024dd3d/domloaded-opt.gif?id=d1db2def-7cf5-48e8-85e3-b6de5cc1d81d&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481777741&signature=J4_N6YZL8fzTO26uze51X5RDeQauH1yG7HWU4Mfo0Zo&downloadName=domloaded-opt.gif">
-  <img src="https://file.notion.so/f/s/9d725ca3-3d52-4fea-a100-4593a024dd3d/domloaded-opt.gif?id=d1db2def-7cf5-48e8-85e3-b6de5cc1d81d&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481777741&signature=J4_N6YZL8fzTO26uze51X5RDeQauH1yG7HWU4Mfo0Zo&downloadName=domloaded-opt.gif" title="browser-opt-example.gif">
+<a href="../../images/2023-04-24-frontend-performance-optimization/browser-opt-example.gif">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/browser-opt-example.gif" title="browser-opt-example.gif">
   <figcaption>스크립트가 무거운 웹페이지에서 브라우저 기준의 성능 최적화를 적용시킨 모습이다.<br />
 최적화로 인해 프로그레스바가 더 이른 시간에 그려졌지만, 실제 컨텐츠를 볼 수 있는 시간은 같다.</figcaption>
 </a>
@@ -150,8 +150,8 @@ header:
 
 그래서 빠른 웹페이지의 기준은 사용자가 **의미 있는 컨텐츠가 처음 보여지는 시점(FMP)**으로 바뀌었다. 현재 웹 페이지는 이 시점을 앞당기는 최적화를 해야한다.
 
-<a href="https://file.notion.so/f/s/92e2eafc-23de-462e-89af-d12a1ddf308f/Untitled.png?id=42b61cd8-2b41-438e-888f-21919522cdf9&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481804216&signature=B1QtC9mjH10fFcYcpbFjL8YS_dol7G-nZgQQHvPe6bY&downloadName=Untitled.png">
-  <img src="https://file.notion.so/f/s/92e2eafc-23de-462e-89af-d12a1ddf308f/Untitled.png?id=42b61cd8-2b41-438e-888f-21919522cdf9&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481804216&signature=B1QtC9mjH10fFcYcpbFjL8YS_dol7G-nZgQQHvPe6bY&downloadName=Untitled.png" title="user-standard-perf.png">
+<a href="https://user-images.githubusercontent.com/35218826/59728736-36851b80-9276-11e9-854d-bf1f2e0992f4.png">
+  <img src="https://user-images.githubusercontent.com/35218826/59728736-36851b80-9276-11e9-854d-bf1f2e0992f4.png" title="user-standard-perf.png">
 </a>
 
 사용자 기준의 성능 측정은 브라우저의 핵심 이벤트가 아닌, 사용자 입장에서 컨텐츠를 보여지는 여러 시점을 기반으로 한다. 그 시점들은 다음과 같다.
@@ -164,8 +164,8 @@ header:
 FMP와 더불어 중요한 것은 **주요 렌더링 결과를 최적화**하여 사용자에게 웹페이지가 (프로그레스바만 보여주는게 아닌) 실질적으로 작동하고 있다는 인상을 주는 것이다.
 
 <figure>
-<a href="https://file.notion.so/f/s/0eb297f5-e36a-47b1-b2ce-b9db1b6a4e39/Screen_Shot_2023-04-24_at_10.08.40_PM.png?id=51ef88d4-449d-4f6e-bd72-11ecddcb5455&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481814626&signature=DF-XLBCjZI4nM91nDHF_uz8bAJeGjHQNgXXmqPLhy3g&downloadName=Screen+Shot+2023-04-24+at+10.08.40+PM.png">
-  <img src="https://file.notion.so/f/s/0eb297f5-e36a-47b1-b2ce-b9db1b6a4e39/Screen_Shot_2023-04-24_at_10.08.40_PM.png?id=51ef88d4-449d-4f6e-bd72-11ecddcb5455&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481814626&signature=DF-XLBCjZI4nM91nDHF_uz8bAJeGjHQNgXXmqPLhy3g&downloadName=Screen+Shot+2023-04-24+at+10.08.40+PM.png" title="render-path-opt.png">
+<a href="https://user-images.githubusercontent.com/35218826/59728735-36851b80-9276-11e9-8a3d-ed60eaec2d1d.png">
+  <img style="background-color: #ffffff;" src="https://user-images.githubusercontent.com/35218826/59728735-36851b80-9276-11e9-8a3d-ed60eaec2d1d.png" title="render-path-opt.png">
   <figcaption>주요 렌더링 경로 최적화가 잘 된 웹페이지와 그러지 못한 웹페이지의 비교</figcaption>
 </a>
 </figure>
@@ -178,13 +178,13 @@ FMP와 더불어 중요한 것은 **주요 렌더링 결과를 최적화**하여
 
 웹 페이지의 로딩 단계를 차트로 볼 수 있다. 로딩을 레코딩하고 단계 별로 소요 시간을 확인하여 최적화가 필요한 부분을 찾을 수 있다.
 
-<a href="https://file.notion.so/f/s/ac97b070-1660-4fc9-bc8b-446cbda3084e/Screen_Shot_2023-04-25_at_10.44.02_AM.png?id=9532a3c9-73be-4f9b-b1c7-2364de87d2bc&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481826240&signature=ahdCh8PJn2xqZtHG8aM37b4EoPyoNL4qgNGe2DjrWtA&downloadName=Screen+Shot+2023-04-25+at+10.44.02+AM.png">
-  <img src="https://file.notion.so/f/s/ac97b070-1660-4fc9-bc8b-446cbda3084e/Screen_Shot_2023-04-25_at_10.44.02_AM.png?id=9532a3c9-73be-4f9b-b1c7-2364de87d2bc&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481826240&signature=ahdCh8PJn2xqZtHG8aM37b4EoPyoNL4qgNGe2DjrWtA&downloadName=Screen+Shot+2023-04-25+at+10.44.02+AM.png" title="tool-performance.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/tool-performance.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/tool-performance.png" title="tool-performance.png">
 </a>
 
 <figure>
-<a href="https://file.notion.so/f/s/32421384-b3f7-4cb1-b176-4263884e84c2/59729118-ef982580-9277-11e9-84f7-1fb3cf4e3a5f.gif?id=66268716-761c-4bd2-a6d0-afb8f5b06950&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481837534&signature=5I0XICpZjLSLBDMaWIGD1idEWy5I4uXhF-cMTgOkzdM&downloadName=59729118-ef982580-9277-11e9-84f7-1fb3cf4e3a5f.gif">
-  <img src="https://file.notion.so/f/s/32421384-b3f7-4cb1-b176-4263884e84c2/59729118-ef982580-9277-11e9-84f7-1fb3cf4e3a5f.gif?id=66268716-761c-4bd2-a6d0-afb8f5b06950&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481837534&signature=5I0XICpZjLSLBDMaWIGD1idEWy5I4uXhF-cMTgOkzdM&downloadName=59729118-ef982580-9277-11e9-84f7-1fb3cf4e3a5f.gif" title="tool-example.gif">
+<a href="https://user-images.githubusercontent.com/35218826/59729118-ef982580-9277-11e9-84f7-1fb3cf4e3a5f.gif">
+  <img src="https://user-images.githubusercontent.com/35218826/59729118-ef982580-9277-11e9-84f7-1fb3cf4e3a5f.gif" title="tool-example.gif">
   <figcaption>웹 페이지 로드 시, 레코딩을 한 후 Main 영역에서 로딩 과정을 확인할 수 있다.</figcaption>
 </a>
 </figure>
@@ -193,28 +193,28 @@ FMP와 더불어 중요한 것은 **주요 렌더링 결과를 최적화**하여
 
 웹 페이지가 로딩 중 요청한 리소스의 상태를 차트로 볼 수 있으며, 리소스 최적화 상태를 비교할 수 있다.
 
-<a href="https://file.notion.so/f/s/ec5a07f7-dadf-4dfa-b31b-0d850ae82e7a/Screen_Shot_2023-04-25_at_10.53.03_AM.png?id=63444979-b216-4b8d-930f-31cb422a275e&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481969565&signature=bKmtsCMRb9HuudrvV4JRcAE8nqDKE2x6Qgk36FqFqtk&downloadName=Screen+Shot+2023-04-25+at+10.53.03+AM.png">
-  <img src="https://file.notion.so/f/s/ec5a07f7-dadf-4dfa-b31b-0d850ae82e7a/Screen_Shot_2023-04-25_at_10.53.03_AM.png?id=63444979-b216-4b8d-930f-31cb422a275e&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481969565&signature=bKmtsCMRb9HuudrvV4JRcAE8nqDKE2x6Qgk36FqFqtk&downloadName=Screen+Shot+2023-04-25+at+10.53.03+AM.png" title="tool-network.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/tool-network.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/tool-network.png" title="tool-network.png">
 </a>
 
 <h3>리소스의 서버 요청 대기 시간 보기</h3>
 
-<a href="https://file.notion.so/f/s/10d5d485-210e-4e09-9aa4-9675b2b4ecb8/Screen_Shot_2023-04-25_at_11.17.09_AM.png?id=0aea874a-cb58-4c1a-901d-b2bfb43880c8&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481981432&signature=eYeCiYoAFPJ78yBWJDJZbhrGttkcJREa2PeD_CxUZS8&downloadName=Screen+Shot+2023-04-25+at+11.17.09+AM.png">
-  <img src="https://file.notion.so/f/s/10d5d485-210e-4e09-9aa4-9675b2b4ecb8/Screen_Shot_2023-04-25_at_11.17.09_AM.png?id=0aea874a-cb58-4c1a-901d-b2bfb43880c8&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481981432&signature=eYeCiYoAFPJ78yBWJDJZbhrGttkcJREa2PeD_CxUZS8&downloadName=Screen+Shot+2023-04-25+at+11.17.09+AM.png" title="tool-server-request-wait-time.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/tool-network-waiting.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/tool-network-waiting.png" title="tool-server-request-wait-time.png">
 </a>
 
 <h3>Audits 패널</h3>
 
 사용자 기준 성능 측정 지표를 확인할 수 있다.
 
-<a href="https://file.notion.so/f/s/ec5a07f7-dadf-4dfa-b31b-0d850ae82e7a/Screen_Shot_2023-04-25_at_10.53.03_AM.png?id=63444979-b216-4b8d-930f-31cb422a275e&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481969565&signature=bKmtsCMRb9HuudrvV4JRcAE8nqDKE2x6Qgk36FqFqtk&downloadName=Screen+Shot+2023-04-25+at+10.53.03+AM.png">
-  <img src="https://file.notion.so/f/s/ec5a07f7-dadf-4dfa-b31b-0d850ae82e7a/Screen_Shot_2023-04-25_at_10.53.03_AM.png?id=63444979-b216-4b8d-930f-31cb422a275e&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682481969565&signature=bKmtsCMRb9HuudrvV4JRcAE8nqDKE2x6Qgk36FqFqtk&downloadName=Screen+Shot+2023-04-25+at+10.53.03+AM.png" title="tool-audits.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/tool-audits.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/tool-audits.png" title="tool-audits.png">
 </a>
 
 <h3>측정 후 화면</h3>
 
-<a href="https://file.notion.so/f/s/ab94d769-ba80-4ddc-b46d-7cc6d9b960e0/Screen_Shot_2023-04-25_at_11.42.48_AM.png?id=3282803e-6566-43c2-a03b-4b24aa0f359c&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482004535&signature=PjrKeM3V0PD6mtOkwd3XSnJafKxvyQXcu4W83uhcObg&downloadName=Screen+Shot+2023-04-25+at+11.42.48+AM.png">
-  <img src="https://file.notion.so/f/s/ab94d769-ba80-4ddc-b46d-7cc6d9b960e0/Screen_Shot_2023-04-25_at_11.42.48_AM.png?id=3282803e-6566-43c2-a03b-4b24aa0f359c&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482004535&signature=PjrKeM3V0PD6mtOkwd3XSnJafKxvyQXcu4W83uhcObg&downloadName=Screen+Shot+2023-04-25+at+11.42.48+AM.png" title="tool-audits-result.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/tool-audits-result.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/tool-audits-result.png" title="tool-audits-result.png">
 </a>
 
 # 로딩 최적화
@@ -226,8 +226,8 @@ FMP와 더불어 중요한 것은 **주요 렌더링 결과를 최적화**하여
 브라우저는 서버로부터 리소스를 내려받은 후, HTML 문서부터 파싱하여 DOM을 생성한다고 했다. 그런데, HTML 파서는 `<link>`나 `<style />` 태그를 만나면 DOM 생성을 중단(블록)하고 CSS나 JS 파일을 파싱하기 시작한다.
 
 <figure>
-<a href="https://file.notion.so/f/s/cedd1105-aef1-442b-960a-f8b477ad4ac6/Screen_Shot_2023-04-24_at_6.34.25_PM.png?id=a12bd67e-7eb7-4c13-9ceb-b7c214f1f7e8&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482017091&signature=OE8hcB1Oq3h-vrZpymjuV3Xp9uFznsBnXv6UARzdZJs&downloadName=Screen+Shot+2023-04-24+at+6.34.25+PM.png">
-  <img src="https://file.notion.so/f/s/cedd1105-aef1-442b-960a-f8b477ad4ac6/Screen_Shot_2023-04-24_at_6.34.25_PM.png?id=a12bd67e-7eb7-4c13-9ceb-b7c214f1f7e8&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482017091&signature=OE8hcB1Oq3h-vrZpymjuV3Xp9uFznsBnXv6UARzdZJs&downloadName=Screen+Shot+2023-04-24+at+6.34.25+PM.png" title="block-resource.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/block-resource.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/block-resource.png" title="block-resource.png">
   <figcaption>블록 리소스로 인해 HTML 파싱이 지연된 시간 동안, 사용자는 빈 화면을 보고 있어야 한다.</figcaption>
 </a>
 </figure>
@@ -238,8 +238,8 @@ FMP와 더불어 중요한 것은 **주요 렌더링 결과를 최적화**하여
 
 브라우저가 웹 페이지를 그리기 위해선, 렌더 트리(DOM + CSSOM)가 있어야 한다. CSSOM이 만들어지지 않은 상태에서는 브라우저는 텍스트와 기본 마크업 밖에 보여줄 수 없다. 이런 화면이 잠시라도 보여지게 된다면 사용자 경험 측면에서 매우 좋지 않을 것이다. 따라서, 이런 상황을 방지하기 위해 브라우저는 CSS 파싱 전 HTML 파싱을 중단시킨다.
 
-<a href="https://file.notion.so/f/s/e942b81d-5fc9-4821-b1ec-e53789bc1315/Screen_Shot_2023-04-24_at_6.44.30_PM.png?id=f5aacfaa-c329-44e6-b46c-9de46d02dc78&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482026446&signature=t5dFY6oir6RTQPrPJhjXcYOR6y9O88Rb9JgirAV6xak&downloadName=Screen+Shot+2023-04-24+at+6.44.30+PM.png">
-  <img src="https://file.notion.so/f/s/e942b81d-5fc9-4821-b1ec-e53789bc1315/Screen_Shot_2023-04-24_at_6.44.30_PM.png?id=f5aacfaa-c329-44e6-b46c-9de46d02dc78&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482026446&signature=t5dFY6oir6RTQPrPJhjXcYOR6y9O88Rb9JgirAV6xak&downloadName=Screen+Shot+2023-04-24+at+6.44.30+PM.png" title="block-resource-css.png">
+<a href="https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/04/s_601945040BCA3610D759145A4442799C97B904D9A9F8326DD30FDF0CF48A96B7_1555165463692_duckduckgo-compare.jpg?ssl=1">
+  <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/04/s_601945040BCA3610D759145A4442799C97B904D9A9F8326DD30FDF0CF48A96B7_1555165463692_duckduckgo-compare.jpg?ssl=1" title="block-resource-css.png">
 </a>
 
 <h4>JS</h4>
@@ -306,8 +306,8 @@ CSS와 JS는 HTML 파싱을 중단시키므로 **블록 리소스(Block resource
 JS는 DOM 조작을 통해 DOM / CSSOM 트리를 변경할 수 있기 때문에, 모든 스크립트가 다운되고 실행될 때까지 HTML 파싱(DOM 생성)이 중단된다. 이로 인해, 렌더 트리(DOM + CSSOM)의 구성 또한 지연된다. 따라서, JS는 블록 리소스이자 렌더링 차단 리소스이기도 하다.
 
 <figure>
-<a href="https://file.notion.so/f/s/bbb4ff9e-f524-4e82-8f9a-d8cd07cedbb1/Untitled.png?id=0db9db3f-62af-480b-a432-f3a83ae13f6f&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482038876&signature=lecybBOh8bDMsaagOTvWStj6NOYYYj631sA3QHEu6rQ&downloadName=Untitled.png">
-  <img src="https://file.notion.so/f/s/bbb4ff9e-f524-4e82-8f9a-d8cd07cedbb1/Untitled.png?id=0db9db3f-62af-480b-a432-f3a83ae13f6f&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482038876&signature=lecybBOh8bDMsaagOTvWStj6NOYYYj631sA3QHEu6rQ&downloadName=Untitled.png" title="script-order-normal.png">
+<a href="https://wormwlrm.github.io/static/98fa3272b42769edf1bb9e3fc70407e8/a6d36/3.png">
+  <img src="https://wormwlrm.github.io/static/98fa3272b42769edf1bb9e3fc70407e8/a6d36/3.png" title="script-order-normal.png">
   <figcaption>일반적인 스크립트 로드 순서<br />(HTML 파싱과 스크립트 로딩이 동기(직렬)적으로 일어나고 있다) </figcaption>
 </a>
 </figure>
@@ -352,8 +352,8 @@ JS는 DOM 조작을 통해 DOM / CSSOM 트리를 변경할 수 있기 때문에,
 ```
 
 <figure>
-<a href="https://file.notion.so/f/s/d05d1b15-c0a3-4761-a3a2-6b909d5d4030/Untitled.png?id=92c24c64-9abf-4071-8dd6-5fd50099758a&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482113213&signature=LkYNhMUTo2o3Pn9H8-dkxjbagYTlMu8mXlBV16tLpWc&downloadName=Untitled.png">
-  <img src="https://file.notion.so/f/s/d05d1b15-c0a3-4761-a3a2-6b909d5d4030/Untitled.png?id=92c24c64-9abf-4071-8dd6-5fd50099758a&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482113213&signature=LkYNhMUTo2o3Pn9H8-dkxjbagYTlMu8mXlBV16tLpWc&downloadName=Untitled.png" title="script-order-defer.png">
+<a href="https://wormwlrm.github.io/static/4b70dc585a1eae2aff8d56e4bfa44ef0/a6d36/5.png">
+  <img src="https://wormwlrm.github.io/static/4b70dc585a1eae2aff8d56e4bfa44ef0/a6d36/5.png" title="script-order-defer.png">
   <figcaption>defer 스크립트의 로드 순서<br/>(HTML 파싱과 스크립트 로딩이 비동기적으로 일어난다. 스크립트 실행은 HTML 파싱이 끝난 후 일어난다.)</figcaption>
 </a>
 </figure>
@@ -376,24 +376,24 @@ JS는 DOM 조작을 통해 DOM / CSSOM 트리를 변경할 수 있기 때문에,
 
 여러 개 이미지를 하나로 만든 후, CSS `background-position` 속성으로 이미지를 부분적으로 사용하는 방법이다.
 
-<a href="https://file.notion.so/f/s/3f4cf555-06e2-43e4-88ac-25985e01598c/Screen_Shot_2023-04-25_at_12.16.37_AM.png?id=a1489590-2b0c-46be-9153-445d14d95b32&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482123096&signature=cqeffjov0vUwKdLupPz-oUJZzabZ40YjPS6IVJKvAn0&downloadName=Screen+Shot+2023-04-25+at+12.16.37+AM.png">
-  <img src="https://file.notion.so/f/s/3f4cf555-06e2-43e4-88ac-25985e01598c/Screen_Shot_2023-04-25_at_12.16.37_AM.png?id=a1489590-2b0c-46be-9153-445d14d95b32&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482123096&signature=cqeffjov0vUwKdLupPz-oUJZzabZ40YjPS6IVJKvAn0&downloadName=Screen+Shot+2023-04-25+at+12.16.37+AM.png" title="image-sprite.png">
+<a href="../../images/2023-04-24-frontend-performance-optimization/image-sprite.png">
+  <img src="../../images/2023-04-24-frontend-performance-optimization/image-sprite.png" title="image-sprite.png">
 </a>
 
 <h3>이미지 지연 로딩</h3>
 
 사용자 화면에 보이는 이미지만 먼저 요청하고 스크롤 할 때마다 필요한 이미지만 요청하여 리소스 요청 수를 줄이는 방법이다.
 
-<a href="https://file.notion.so/f/s/4d82994a-f72e-43d3-967f-2714a94732ec/img.gif?id=9be619b5-8d5a-45a9-af8c-a6f42eed15c9&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482131701&signature=oUQQhTp7JQhKDkSmkZBl1Th0OZxvnYL6u-hzX5Y7Nbw&downloadName=img.gif">
-  <img src="https://file.notion.so/f/s/4d82994a-f72e-43d3-967f-2714a94732ec/img.gif?id=9be619b5-8d5a-45a9-af8c-a6f42eed15c9&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482131701&signature=oUQQhTp7JQhKDkSmkZBl1Th0OZxvnYL6u-hzX5Y7Nbw&downloadName=img.gif" title="lazy-loading.gif">
+<a href="https://blog.kakaocdn.net/dn/bgPSC7/btrg1YkElpj/DkvyYHnBkBwlZtnKmyHRm0/img.gif">
+  <img src="https://blog.kakaocdn.net/dn/bgPSC7/btrg1YkElpj/DkvyYHnBkBwlZtnKmyHRm0/img.gif" title="lazy-loading.gif">
 </a>
 
 <h3>CSS, JS 번들링</h3>
 
 webpack과 같은 모듈 번들러로 여러 JS 파일을 하나의 번들 파일로 생성(번들링)한다. 마찬가지로 여러 파일을 하나의 번들로 묶어 요청 수를 줄이는 방법이다.
 
-<a href="https://file.notion.so/f/s/b2544928-860e-42cd-bff4-a210eb4960c1/Untitled.png?id=e0349edb-41c7-4010-92f2-280fff233630&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482142571&signature=DoFAgOHGoq8MLew43jBDS9fEPYvvbJlpU455s4HL-rU&downloadName=Untitled.png">
-  <img src="https://file.notion.so/f/s/b2544928-860e-42cd-bff4-a210eb4960c1/Untitled.png?id=e0349edb-41c7-4010-92f2-280fff233630&table=block&spaceId=6f699fdf-d309-4834-ab97-9d5fc06ead64&expirationTimestamp=1682482142571&signature=DoFAgOHGoq8MLew43jBDS9fEPYvvbJlpU455s4HL-rU&downloadName=Untitled.png" title="bundling.png">
+<a href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxOxfx%2FbtqEiLC3pk4%2Fb8y3096QNfSo8dXjKLwHC1%2Fimg.png">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxOxfx%2FbtqEiLC3pk4%2Fb8y3096QNfSo8dXjKLwHC1%2Fimg.png" title="bundling.png">
 </a>
 
 <h3>내부 스타일시트 사용</h3>
@@ -445,12 +445,12 @@ HTML, CSS, JS는 모두 압축(minify)가능하다. 불필요한 주석과 공�
 
 ## 로딩 최적화 정리
 
-| | 블록 차단 리소스 최적화| 리소스 요청 수 줄이기 | 리소스 용량 줄이기 |
-| --- | --- | ---| --- |
-| CSS | - 태그를 `<head>` 안에 배치<br />- 미디어 쿼리 사용<br />- @import 사용 지양<br />- 때에 따라, 인라인 스타일 사용<br /> | -내부 스타일 시트 사용 | - 복잡한 선택자 사용 지양<br />- 공통 스타일 class로 묶기
-| JS | - 태그를 `</body>` 직전 배치<br />- `async`,`defer` 사용 | - 모듈 번들링 | - 트리 쉐이킹<br />- 불필요한 코드 제거<br />- 압축 및 난독화 |
-| 이미지, 폰트 || - 이미지 스프라이트<br />- 지연 로딩 | 올바른 확장자 사용<br />- 불필요한 파일 요청 지양 |
-| 공통 | | | - 캐싱 |
+|              | 블록 차단 리소스 최적화                                                                                                 | 리소스 요청 수 줄이기                | 리소스 용량 줄이기                                            |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------- |
+| CSS          | - 태그를 `<head>` 안에 배치<br />- 미디어 쿼리 사용<br />- @import 사용 지양<br />- 때에 따라, 인라인 스타일 사용<br /> | -내부 스타일 시트 사용               | - 복잡한 선택자 사용 지양<br />- 공통 스타일 class로 묶기     |
+| JS           | - 태그를 `</body>` 직전 배치<br />- `async`,`defer` 사용                                                                | - 모듈 번들링                        | - 트리 쉐이킹<br />- 불필요한 코드 제거<br />- 압축 및 난독화 |
+| 이미지, 폰트 |                                                                                                                         | - 이미지 스프라이트<br />- 지연 로딩 | 올바른 확장자 사용<br />- 불필요한 파일 요청 지양             |
+| 공통         |                                                                                                                         |                                      | - 캐싱                                                        |
 
 # 렌더링 최적화
 
@@ -560,6 +560,5 @@ CSS 애니메이션을 사용할 시, `position : absolute` 이나 `fixed` 를 �
 
 - [https://ui.toast.com/fe-guide/ko_PERFORMANCE](https://ui.toast.com/fe-guide/ko_PERFORMANCE)
 - [https://youtu.be/G1IWq2blu8c](https://youtu.be/G1IWq2blu8c)
-- [https://web.dev/critical-rendering-path-render-blocking-css/#:~:text=By default%2C CSS is treated,and queries to unblock rendering](https://web.dev/critical-rendering-path-render-blocking-css/#:~:text=By%20default%2C%20CSS%20is%20treated,and%20queries%20to%20unblock%20rendering).
 - [https://wormwlrm.github.io/2021/03/01/Async-Defer-Attributes-of-Script-Tag.html](https://wormwlrm.github.io/2021/03/01/Async-Defer-Attributes-of-Script-Tag.html)
 - [https://coffeeandcakeandnewjeong.tistory.com/34#](https://coffeeandcakeandnewjeong.tistory.com/34#)
