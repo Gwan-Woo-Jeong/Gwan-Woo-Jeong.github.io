@@ -292,3 +292,4 @@ after_footer_scripts:
   - /assets/js/custom/dark-theme.js
   - /assets/js/custom/to-top.js
   - /assets/js/custom/get-multiple-claps.js
+  - /assets/js/custom/count-visitors.js
