@@ -141,7 +141,7 @@
         </li>
         {% endif %} {% endfor %}
       </ul>
-      <ul class="visitor-count">
+      <!-- <ul class="visitor-count">
         <a class="total-visitors">
           <p class="total-visitors__title">Total Visitors</p>
           <p class="total-visitors__count"></p>
@@ -152,7 +152,7 @@
         <a class="day-visitors">
           Yesterday : <span class="day-visitors__yesterday-count"></span>
         </a>
-      </ul>
+      </ul> -->
     </li>
   </ul>
 </nav>
