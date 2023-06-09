@@ -2,7 +2,7 @@
 layout: single
 title: "Framework Overview"
 categories: Next
-tag: [웹 표준, 시맨틱 태그, 웹 접근성]
+tag: [NextJS, Nomad Coders]
 toc: true
 toc_sticky: true
 excerpt: "
@@ -17,10 +17,10 @@ Library
 예를 들어, React에서 페이지를 작성할 때 파일이 프로젝트 안에만 존재하면 상관없다. 그 페이지를 React Router(라이브러리)로 연결시켜 route를 만든다.
 "
 header:
-  teaser: https://nomadcoders.co/_next/image?url=https%3A%2F%2Fd1telmomo28umc.cloudfront.net%2Fmedia%2Fpublic%2Fthumbnails%2Fnextjs.jpeg&w=1200&q=75
+  teaser: https://miro.medium.com/v2/resize:fit:1000/1*htbUdWgFQ3a94PMEvBr_hQ.png
 ---
 
-![Next_thumb.jpg](https://nomadcoders.co/_next/image?url=https%3A%2F%2Fd1telmomo28umc.cloudfront.net%2Fmedia%2Fpublic%2Fthumbnails%2Fnextjs.jpeg&w=1200&q=75)
+![Next_thumb.jpg](https://miro.medium.com/v2/resize:fit:1000/1*htbUdWgFQ3a94PMEvBr_hQ.png)
 
 # Library vs Framework
 
